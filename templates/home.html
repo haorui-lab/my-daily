@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>{{title}}</title>
+<link rel="stylesheet" href="{{css_href}}">
+</head>
+<body class="home">
+  <div class="home-wrap">
+    <header class="home-header">
+      <p class="site-name">Daily News</p>
+      <h1>{{heading}}</h1>
+      <p class="home-tagline">{{tagline}}</p>
+      <p class="home-cta">
+        <a class="btn-primary" href="{{latest_href}}">进入今日 · {{latest_date}}</a>
+      </p>
+    </header>
+
+    <section class="home-latest" aria-labelledby="latest-heading">
+      <div class="home-latest-top">
+        <h2 id="latest-heading">最新一期</h2>
+        <a class="home-latest-date" href="{{latest_href}}">{{latest_date}}</a>
+      </div>
+      {{latest_subtitle_html}}
+      <ul class="home-counts">
+        {{counts_html}}
+      </ul>
+      <ol class="home-previews">
+        {{previews_html}}
+      </ol>
+      <p class="home-more"><a href="{{latest_href}}">阅读完整日报 →</a></p>
+    </section>
+
+    <section class="home-archive" aria-labelledby="archive-heading">
+      <h2 id="archive-heading">往期</h2>
+      <ul class="home-day-list">
+        {{archive_html}}
+      </ul>
+    </section>
+
+    <footer>{{footer}}</footer>
+  </div>
+</body>
+</html>

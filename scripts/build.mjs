@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Fill templates/day.html from content/*.json → public/YYYY/MM/DD/index.html
- * Also writes public/index.html (redirect to latest) and copies assets/.
+ * Fill templates/home.html → public/index.html (landing with latest + archive).
+ * Copies assets/. Softens redirects so `/` serves the real homepage.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -12,6 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const CONTENT = path.join(ROOT, "content");
 const TEMPLATE = path.join(ROOT, "templates", "day.html");
+const HOME_TEMPLATE = path.join(ROOT, "templates", "home.html");
 const ASSETS = path.join(ROOT, "assets");
 const OUT = path.join(ROOT, "public");
 
@@ -174,6 +176,106 @@ function assetHref(depth, name) {
   return "../".repeat(depth) + `assets/${name}`;
 }
 
+const PREVIEW_LIMIT = 6;
+
+function sectionCounts(day) {
+  return SECTION_ORDER.map(([key, fallback]) => {
+    const section = day.sections?.[key];
+    const title = section?.title || fallback;
+    const n = (section?.items || []).length;
+    return { key, title, n, sid: sectionId(key) };
+  });
+}
+
+function collectPreviews(day, dayPath, limit = PREVIEW_LIMIT) {
+  const out = [];
+  for (const [key, fallback] of SECTION_ORDER) {
+    const section = day.sections?.[key];
+    const items = section?.items || [];
+    const secTitle = section?.title || fallback;
+    items.forEach((item, index) => {
+      if (out.length >= limit) return;
+      out.push({
+        title: tocTitlePlain(item.title),
+        section: secTitle,
+        href: `/${dayPath}/#${itemId(key, item, index)}`,
+      });
+    });
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+function renderCountsHtml(day, dayPath) {
+  return sectionCounts(day)
+    .map(({ title, n, sid }) => {
+      if (!n) {
+        return `<li><span>${esc(title)}</span><span class="n">0</span></li>`;
+      }
+      return `<li><a href="/${dayPath}/#${esc(sid)}">${esc(title)}<span class="n">${n}</span></a></li>`;
+    })
+    .join("\n        ");
+}
+
+function renderPreviewsHtml(previews) {
+  if (!previews.length) {
+    return `<li><span class="sec">本日暂无条目</span></li>`;
+  }
+  return previews
+    .map(
+      (p) =>
+        `<li><div><a href="${esc(p.href)}">${esc(p.title)}</a><span class="sec">${esc(p.section)}</span></div></li>`
+    )
+    .join("\n        ");
+}
+
+function renderArchiveHtml(dates, byDate, latest) {
+  return [...dates]
+    .reverse()
+    .map((date) => {
+      const day = byDate.get(date);
+      const { path: urlPath } = dateParts(date);
+      const counts = sectionCounts(day);
+      const total = counts.reduce((s, c) => s + c.n, 0);
+      const parts = counts.filter((c) => c.n).map((c) => `${c.title} ${c.n}`);
+      const meta = parts.length ? parts.join(" · ") : "安静日";
+      const cls = date === latest ? ' class="is-latest"' : "";
+      return `<li${cls}><a href="/${urlPath}/"><span class="d">${esc(date)}</span><span class="meta">${esc(meta)} · ${total} 条</span></a></li>`;
+    })
+    .join("\n        ");
+}
+
+function renderHome(days, dates, byDate, latest) {
+  const homeTpl = fs.readFileSync(HOME_TEMPLATE, "utf8");
+  const latestDay = byDate.get(latest);
+  const latestPath = dateParts(latest).path;
+  const previews = collectPreviews(latestDay, latestPath);
+  const subtitleHtml = latestDay.subtitle
+    ? `<p class="home-latest-sub">${esc(latestDay.subtitle)}</p>`
+    : "";
+
+  return homeTpl
+    .replaceAll("{{title}}", "Daily News")
+    .replaceAll("{{heading}}", "Daily News")
+    .replaceAll(
+      "{{tagline}}",
+      "工作日盯梢 · 有干货才推。Research · 厂商动态 · 新词雷达 · 剪藏。"
+    )
+    .replaceAll("{{css_href}}", "assets/site.css")
+    .replaceAll("{{latest_href}}", `/${latestPath}/`)
+    .replaceAll("{{latest_date}}", latest)
+    .replaceAll("{{latest_subtitle_html}}", subtitleHtml)
+    .replaceAll("{{counts_html}}", renderCountsHtml(latestDay, latestPath))
+    .replaceAll("{{previews_html}}", renderPreviewsHtml(previews))
+    .replaceAll("{{archive_html}}", renderArchiveHtml(dates, byDate, latest))
+    .replaceAll(
+      "{{footer}}",
+      latestDay.footer ||
+        "工作日盯梢 · 有干货才推 · Research · 厂商 · 新词雷达 · 剪藏"
+    );
+}
+
+
 function build() {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(OUT, { recursive: true });
@@ -242,25 +344,14 @@ function build() {
 
   const latest = dates[dates.length - 1];
   const latestPath = dateParts(latest).path;
-  const indexHtml = `<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=/${latestPath}/">
-<link rel="canonical" href="/${latestPath}/">
-<title>Daily News · 最新</title>
-<script>location.replace("/${latestPath}/");</script>
-</head>
-<body>
-  <p><a href="/${latestPath}/">进入最新日报 ${latest}</a></p>
-</body>
-</html>
-`;
+  const indexHtml = renderHome(days, dates, byDate, latest);
   fs.writeFileSync(path.join(OUT, "index.html"), indexHtml, "utf8");
+  console.log("built / (home landing)");
 
+  // Keep _redirects present for Pages, but do NOT force `/` away from index.html.
   fs.writeFileSync(
     path.join(OUT, "_redirects"),
-    `# Cloudflare Pages\n/ /${latestPath}/ 302\n`,
+    `# Cloudflare Pages — homepage is public/index.html; no root redirect.\n`,
     "utf8"
   );
 
@@ -270,7 +361,6 @@ function build() {
       {
         cleanUrls: true,
         trailingSlash: true,
-        redirects: [{ source: "/", destination: `/${latestPath}/`, permanent: false }],
       },
       null,
       2
@@ -278,7 +368,7 @@ function build() {
     "utf8"
   );
 
-  console.log(`latest → /${latestPath}/ (${dates.length} days)`);
+  console.log(`latest day /${latestPath}/ · ${dates.length} days in archive`);
 }
 
 build();

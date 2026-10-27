@@ -515,3 +515,252 @@ footer {
   .main-col { padding: 1rem 1rem 3rem; }
   .page-header h1 { font-size: 1.25rem; }
 }
+
+/* —— Home landing —— */
+/* —— Home landing —— */
+body.home {
+  background: var(--bg);
+}
+
+.home-wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.home-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.home-header .site-name {
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 0.65rem;
+}
+
+.home-header h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+}
+
+.home-tagline {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  max-width: 36rem;
+}
+
+.home-cta {
+  margin-top: 1.25rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1rem;
+  background: var(--accent);
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none !important;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-primary {
+    color: #0f0f0e !important;
+  }
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+  text-decoration: none !important;
+}
+
+.home-latest,
+.home-archive {
+  margin-bottom: 2.75rem;
+}
+
+.home-latest-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.home-latest h2,
+.home-archive h2 {
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.home-latest-date {
+  font-size: 1.05rem;
+  font-weight: 650;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.home-latest-date:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.home-latest-sub {
+  margin: 0.65rem 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.home-counts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.1rem;
+  margin: 0 0 1.15rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.home-counts a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.home-counts a:hover {
+  color: var(--text);
+  border-bottom-color: var(--line-strong);
+  text-decoration: none;
+}
+
+.home-counts .n {
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  margin-left: 0.25rem;
+}
+
+.home-previews {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: preview;
+}
+
+.home-previews li {
+  counter-increment: preview;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.4rem 1fr;
+  gap: 0.55rem;
+  align-items: start;
+}
+
+.home-previews li::before {
+  content: counter(preview);
+  font-size: 0.78rem;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.2rem;
+}
+
+.home-previews a {
+  color: var(--text);
+  font-weight: 550;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.home-previews a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.home-previews .sec {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--faint);
+  margin-top: 0.2rem;
+}
+
+.home-more {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+}
+
+.home-day-list {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.home-day-list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.home-day-list a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.home-day-list a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.home-day-list .d {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.home-day-list .meta {
+  font-size: 0.8rem;
+  color: var(--faint);
+  font-weight: 400;
+  text-align: right;
+}
+
+.home-day-list .is-latest .d::after {
+  content: " · 最新";
+  color: var(--faint);
+  font-weight: 500;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 480px) {
+  .home-wrap { padding: 1.5rem 1.1rem 3rem; }
+  .home-header h1 { font-size: 1.5rem; }
+  .home-day-list a { flex-direction: column; gap: 0.25rem; }
+  .home-day-list .meta { text-align: left; }
+}
+

@@ -4,50 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
 <title>{{title}}</title>
 <link rel="stylesheet" href="{{css_href}}">
 </head>
-<body>
-  <div class="shell">
-    <aside class="toc" id="toc" aria-label="目录">
-      <div class="toc-brand">
-        <a class="toc-site" href="/">Daily News</a>
-        <p class="toc-date">{{heading}}</p>
-        <p class="toc-sub">{{date_line}}</p>
+<body class="day">
+  <a class="skip" href="#content">跳到正文</a>
+  <div class="read-progress" aria-hidden="true"></div>
+  <div class="sheet">
+    <header class="mast">
+      <div class="mast-top">
+        <a class="wordmark" href="/">
+          <span class="wordmark-zh">日报</span>
+          <span class="wordmark-en">Daily</span>
+        </a>
+        <p class="mast-kicker">工作日盯梢 · 有干货才推</p>
+        <p class="mast-place">{{timezone}}</p>
+        <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-drawer" hidden>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+          目录
+        </button>
       </div>
-      <nav class="toc-nav" id="toc-nav">
-        {{toc_html}}
-      </nav>
-      <div class="toc-nav-links">
-        <a href="/">最新</a>{{prev_link}}{{next_link}}
-      </div>
-    </aside>
-
-    <div class="main-col">
-      <header class="page-header">
-        <div class="header-top">
-          <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-drawer" hidden>
-            目录
-          </button>
-          <p class="site-name"><a href="/">Daily News</a></p>
-        </div>
-        <h1>{{heading}}</h1>
-        <p class="date">{{date_line}}</p>
-        <p class="nav"><a href="/">最新</a>{{prev_link}}{{next_link}}</p>
-      </header>
-
       <div class="toc-drawer" id="toc-drawer" hidden>
         <nav class="toc-nav toc-nav--mobile" aria-label="移动端目录">
           {{toc_html}}
         </nav>
       </div>
+      <div class="mast-rule" aria-hidden="true"></div>
+    </header>
 
-      <main class="content">
-        {{sections_html}}
-      </main>
+    <div class="spread">
+      <aside class="rail" id="toc" aria-label="目录">
+        <p class="rail-date">{{heading}}</p>
+        <nav class="toc-nav" id="toc-nav">
+          {{toc_html}}
+        </nav>
+        <div class="rail-links">
+          <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+          {{prev_link}}{{next_link}}
+        </div>
+      </aside>
 
-      <footer>{{footer}}</footer>
+      <div class="read">
+        <header class="day-head">
+          <h1 class="issue-date">{{date_display}}</h1>
+          <p class="deck">{{date_line}}</p>
+          <nav class="day-nav" aria-label="期次">
+            <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+            {{prev_link}}{{next_link}}
+          </nav>
+        </header>
+
+        <main class="content" id="content">
+          {{sections_html}}
+        </main>
+      </div>
     </div>
+
+    <footer class="colophon">{{footer}}</footer>
   </div>
   <script src="{{js_href}}" defer></script>
 </body>

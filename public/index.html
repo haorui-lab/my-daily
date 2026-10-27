@@ -4,53 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Daily News</title>
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<title>日报 · Daily News</title>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="home">
-  <div class="home-wrap">
-    <header class="home-header">
-      <p class="site-name">Daily News</p>
-      <h1>Daily News</h1>
-      <p class="home-tagline">工作日盯梢 · 有干货才推。Research · 厂商动态 · 新词雷达 · 剪藏。</p>
-      <p class="home-cta">
-        <a class="btn-primary" href="/2026/10/27/">进入今日 · 2026-10-27</a>
-      </p>
+  <a class="skip" href="#latest">跳到最新一期</a>
+  <div class="sheet">
+    <header class="mast">
+      <div class="mast-top">
+        <a class="wordmark" href="/">
+          <span class="wordmark-zh">日报</span>
+          <span class="wordmark-en">Daily</span>
+        </a>
+        <p class="mast-kicker">工作日盯梢 · 有干货才推</p>
+        <p class="mast-place">Asia/Shanghai</p>
+      </div>
+      <div class="mast-rule" aria-hidden="true"></div>
     </header>
 
-    <section class="home-latest" aria-labelledby="latest-heading">
-      <div class="home-latest-top">
-        <h2 id="latest-heading">最新一期</h2>
-        <a class="home-latest-date" href="/2026/10/27/">2026-10-27</a>
+    <section class="issue" id="latest" aria-labelledby="latest-heading">
+      <div class="issue-lockup">
+        <div class="issue-kicker-row">
+          <p class="issue-kicker" id="latest-heading">最新一期</p>
+          <p class="issue-weekday">星期二</p>
+        </div>
+        <h1 class="issue-date"><a href="/2026/10/27/"><span class="y">2026</span><span class="md"><span>10</span><span class="slash" aria-hidden="true">/</span><span>27</span></span></a></h1>
+        <p class="deck">相对 10-26 上次检查的新增</p>
       </div>
-      <p class="home-latest-sub">相对 10-26 上次检查的新增</p>
-      <ul class="home-counts">
-        <li><a href="/2026/10/27/#section-research">Research（Anthropic / OpenAI）<span class="n">2</span></a></li>
-        <li><a href="/2026/10/27/#section-vendors">厂商动态<span class="n">2</span></a></li>
-        <li><a href="/2026/10/27/#section-radar">新词雷达<span class="n">3</span></a></li>
-        <li><a href="/2026/10/27/#section-clips">剪藏<span class="n">3</span></a></li>
-      </ul>
-      <ol class="home-previews">
-        <li><div><a href="/2026/10/27/#item-research-working-with-academic-communities-to-build-scien-7b9e94">Working with academic communities to build scientific understanding</a><span class="sec">Research（Anthropic / OpenAI）</span></div></li>
-        <li><div><a href="/2026/10/27/#item-research-addendum-to-gpt-6-astra-system-card-gpt-6-1-terr-b266be">Addendum to GPT‑6 Astra System Card: GPT‑6.1 Terra</a><span class="sec">Research（Anthropic / OpenAI）</span></div></li>
-        <li><div><a href="/2026/10/27/#item-vendors-introducing-gpt-6-1-terra-6e2312">Introducing GPT-6.1 Terra</a><span class="sec">厂商动态</span></div></li>
-        <li><div><a href="/2026/10/27/#item-vendors-anthropic-向-sec-提交-ipo-招股书-s-1-5e6768">Anthropic 向 SEC 提交 IPO 招股书（S-1）</a><span class="sec">厂商动态</span></div></li>
-        <li><div><a href="/2026/10/27/#item-radar-fern-fern-0-1-d367a7">Fern（Fern 0.1）</a><span class="sec">新词雷达</span></div></li>
-        <li><div><a href="/2026/10/27/#item-radar-tstack-279993">tstack</a><span class="sec">新词雷达</span></div></li>
+      <ol class="issue-index">
+        <li><a href="/2026/10/27/#section-research"><span class="idx">01</span><span class="n">2</span><span class="name">Research</span></a></li>
+        <li><a href="/2026/10/27/#section-vendors"><span class="idx">02</span><span class="n">2</span><span class="name">厂商动态</span></a></li>
+        <li><a href="/2026/10/27/#section-radar"><span class="idx">03</span><span class="n">3</span><span class="name">新词雷达</span></a></li>
+        <li><a href="/2026/10/27/#section-clips"><span class="idx">04</span><span class="n">3</span><span class="name">剪藏</span></a></li>
       </ol>
-      <p class="home-more"><a href="/2026/10/27/">阅读完整日报 →</a></p>
+      <ol class="issue-list">
+        <li><a href="/2026/10/27/#item-research-working-with-academic-communities-to-build-scien-7b9e94"><span class="idx">01</span><span class="t">Working with academic communities to build scientific understanding</span><span class="sec">Research</span></a></li>
+        <li><a href="/2026/10/27/#item-research-addendum-to-gpt-6-astra-system-card-gpt-6-1-terr-b266be"><span class="idx">02</span><span class="t">Addendum to GPT‑6 Astra System Card: GPT‑6.1 Terra</span><span class="sec">Research</span></a></li>
+        <li><a href="/2026/10/27/#item-vendors-introducing-gpt-6-1-terra-6e2312"><span class="idx">03</span><span class="t">Introducing GPT-6.1 Terra</span><span class="sec">厂商动态</span></a></li>
+        <li><a href="/2026/10/27/#item-vendors-anthropic-向-sec-提交-ipo-招股书-s-1-5e6768"><span class="idx">04</span><span class="t">Anthropic 向 SEC 提交 IPO 招股书（S-1）</span><span class="sec">厂商动态</span></a></li>
+        <li><a href="/2026/10/27/#item-radar-fern-fern-0-1-d367a7"><span class="idx">05</span><span class="t">Fern（Fern 0.1）</span><span class="sec">新词雷达</span></a></li>
+        <li><a href="/2026/10/27/#item-radar-tstack-279993"><span class="idx">06</span><span class="t">tstack</span><span class="sec">新词雷达</span></a></li>
+      </ol>
+      <p class="issue-more"><a href="/2026/10/27/">阅读完整一期</a></p>
     </section>
 
-    <section class="home-archive" aria-labelledby="archive-heading">
-      <h2 id="archive-heading">往期</h2>
-      <ul class="home-day-list">
-        <li class="is-latest"><a href="/2026/10/27/"><span class="d">2026-10-27</span><span class="meta">Research（Anthropic / OpenAI） 2 · 厂商动态 2 · 新词雷达 3 · 剪藏 3 · 10 条</span></a></li>
-        <li><a href="/2026/10/26/"><span class="d">2026-10-26</span><span class="meta">Research（Anthropic / OpenAI） 1 · 厂商动态 2 · 新词雷达 3 · 剪藏 3 · 9 条</span></a></li>
-        <li><a href="/2026/10/25/"><span class="d">2026-10-25</span><span class="meta">安静日 · 0 条</span></a></li>
+    <section class="archive" aria-labelledby="archive-heading">
+      <header class="block-head">
+        <h2 class="block-title" id="archive-heading">往期</h2>
+        <p class="block-count">3 期</p>
+      </header>
+      <ul class="archive-list">
+        <li class="is-latest"><a href="/2026/10/27/"><span class="d"><span class="md">10 / 27</span><span class="y">2026</span></span><span class="meta">Research 2 · 厂商动态 2 · 新词雷达 3 · 剪藏 3</span><span class="total"><span class="flag">最新</span>10 条</span></a></li>
+        <li><a href="/2026/10/26/"><span class="d"><span class="md">10 / 26</span><span class="y">2026</span></span><span class="meta">Research 1 · 厂商动态 2 · 新词雷达 3 · 剪藏 3</span><span class="total">9 条</span></a></li>
+        <li><a href="/2026/10/25/"><span class="d"><span class="md">10 / 25</span><span class="y">2026</span></span><span class="meta">安静日</span><span class="total">0 条</span></a></li>
       </ul>
     </section>
 
-    <footer>工作日盯梢 · 有干货才推 · Research · 厂商 · 新词雷达 · 剪藏</footer>
+    <footer class="colophon">工作日盯梢 · 有干货才推 · Research · 厂商 · 新词雷达 · 剪藏</footer>
   </div>
 </body>
 </html>

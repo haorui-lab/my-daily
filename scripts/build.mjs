@@ -24,6 +24,41 @@ const SECTION_ORDER = [
   ["clips", "剪藏"],
 ];
 
+const SHORT = {
+  research: "Research",
+  vendors: "厂商动态",
+  radar: "新词雷达",
+  clips: "剪藏",
+};
+
+function sectionIndex(key) {
+  const i = SECTION_ORDER.findIndex(([k]) => k === key);
+  return String(Math.max(i, 0) + 1).padStart(2, "0");
+}
+
+function dateDisplay(iso) {
+  const [y, m, d] = iso.split("-");
+  return `<span class="y">${y}</span><span class="md"><span>${m}</span><span class="slash" aria-hidden="true">/</span><span>${d}</span></span>`;
+}
+
+function weekdayZh(iso, timeZone) {
+  const dt = new Date(`${iso}T12:00:00+08:00`);
+  return new Intl.DateTimeFormat("zh-CN", {
+    weekday: "long",
+    timeZone: timeZone || "Asia/Shanghai",
+  }).format(dt);
+}
+
+function copyDir(src, dest) {
+  fs.mkdirSync(dest, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const from = path.join(src, entry.name);
+    const to = path.join(dest, entry.name);
+    if (entry.isDirectory()) copyDir(from, to);
+    else if (entry.isFile()) fs.copyFileSync(from, to);
+  }
+}
+
 function esc(s) {
   return String(s ?? "")
     .replace(/&/g, "&amp;")
@@ -71,13 +106,13 @@ function renderItem(item, id) {
   const links = (item.links || [])
     .map(
       (l) =>
-        `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`
+        `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a>`
     )
     .join("\n          ");
   const linksBlock = links ? `<div class="links">\n          ${links}\n        </div>` : "";
   return `<article class="item" id="${esc(id)}">
-        <h3 class="item-title">${softHtml(item.title)}</h3>
         ${meta}
+        <h3 class="item-title">${softHtml(item.title)}</h3>
         <p class="body">${softHtml(item.gist)}</p>
         ${note}
         ${linksBlock}
@@ -95,10 +130,11 @@ function renderSection(key, section, fallbackTitle) {
 
   const countLabel =
     items.length > 0 ? `<span class="count">${items.length}</span>` : "";
+  const head = `<header class="section-head"><span class="section-index">${sectionIndex(key)}</span><h2>${esc(title)}${countLabel}</h2></header>`;
 
   if (!items.length) {
     return `<section id="${esc(sid)}" data-section="${esc(key)}" class="is-empty">
-      <h2>${esc(title)}${countLabel}</h2>
+      ${head}
       ${clipsNote || `<p class="empty">本日无条目。</p>`}
     </section>`;
   }
@@ -115,7 +151,7 @@ function renderSection(key, section, fallbackTitle) {
   });
 
   return `<section id="${esc(sid)}" data-section="${esc(key)}">
-      <h2>${esc(title)}${countLabel}</h2>
+      ${head}
       ${html.trim()}
     </section>`;
 }
@@ -149,7 +185,7 @@ function renderToc(day) {
     }
 
     parts.push(`<div class="toc-section${emptyClass}">
-        <a class="toc-section-title" href="#${esc(sid)}">${esc(title)}</a>
+        <a class="toc-section-title" href="#${esc(sid)}"><span class="toc-idx">${sectionIndex(key)}</span><span class="toc-label">${esc(title)}</span></a>
         ${itemsHtml}
       </div>`);
   }
@@ -197,7 +233,7 @@ function collectPreviews(day, dayPath, limit = PREVIEW_LIMIT) {
       if (out.length >= limit) return;
       out.push({
         title: tocTitlePlain(item.title),
-        section: secTitle,
+        section: SHORT[key] || secTitle,
         href: `/${dayPath}/#${itemId(key, item, index)}`,
       });
     });
@@ -208,24 +244,24 @@ function collectPreviews(day, dayPath, limit = PREVIEW_LIMIT) {
 
 function renderCountsHtml(day, dayPath) {
   return sectionCounts(day)
-    .map(({ title, n, sid }) => {
-      if (!n) {
-        return `<li><span>${esc(title)}</span><span class="n">0</span></li>`;
-      }
-      return `<li><a href="/${dayPath}/#${esc(sid)}">${esc(title)}<span class="n">${n}</span></a></li>`;
+    .map(({ key, n, sid }, i) => {
+      const idx = String(i + 1).padStart(2, "0");
+      const inner = `<span class="idx">${idx}</span><span class="n">${n}</span><span class="name">${esc(SHORT[key])}</span>`;
+      if (!n) return `<li class="is-zero">${inner}</li>`;
+      return `<li><a href="/${dayPath}/#${esc(sid)}">${inner}</a></li>`;
     })
     .join("\n        ");
 }
 
 function renderPreviewsHtml(previews) {
   if (!previews.length) {
-    return `<li><span class="sec">本日暂无条目</span></li>`;
+    return `<li class="is-quiet">本日暂无条目</li>`;
   }
   return previews
-    .map(
-      (p) =>
-        `<li><div><a href="${esc(p.href)}">${esc(p.title)}</a><span class="sec">${esc(p.section)}</span></div></li>`
-    )
+    .map((p, i) => {
+      const idx = String(i + 1).padStart(2, "0");
+      return `<li><a href="${esc(p.href)}"><span class="idx">${idx}</span><span class="t">${esc(p.title)}</span><span class="sec">${esc(p.section)}</span></a></li>`;
+    })
     .join("\n        ");
 }
 
@@ -234,13 +270,15 @@ function renderArchiveHtml(dates, byDate, latest) {
     .reverse()
     .map((date) => {
       const day = byDate.get(date);
-      const { path: urlPath } = dateParts(date);
+      const { y, m, d, path: urlPath } = dateParts(date);
       const counts = sectionCounts(day);
       const total = counts.reduce((s, c) => s + c.n, 0);
-      const parts = counts.filter((c) => c.n).map((c) => `${c.title} ${c.n}`);
-      const meta = parts.length ? parts.join(" · ") : "安静日";
-      const cls = date === latest ? ' class="is-latest"' : "";
-      return `<li${cls}><a href="/${urlPath}/"><span class="d">${esc(date)}</span><span class="meta">${esc(meta)} · ${total} 条</span></a></li>`;
+      const meta = total
+        ? counts.map((c) => `${SHORT[c.key]} ${c.n}`).join(" · ")
+        : "安静日";
+      const flag = date === latest ? `<span class="flag">最新</span>` : "";
+      const cls = date === latest ? ` class="is-latest"` : "";
+      return `<li${cls}><a href="/${urlPath}/"><span class="d"><span class="md">${m} / ${d}</span><span class="y">${y}</span></span><span class="meta">${esc(meta)}</span><span class="total">${flag}${total} 条</span></a></li>`;
     })
     .join("\n        ");
 }
@@ -251,22 +289,20 @@ function renderHome(days, dates, byDate, latest) {
   const latestPath = dateParts(latest).path;
   const previews = collectPreviews(latestDay, latestPath);
   const subtitleHtml = latestDay.subtitle
-    ? `<p class="home-latest-sub">${esc(latestDay.subtitle)}</p>`
+    ? `<p class="deck">${esc(latestDay.subtitle)}</p>`
     : "";
 
   return homeTpl
-    .replaceAll("{{title}}", "Daily News")
-    .replaceAll("{{heading}}", "Daily News")
-    .replaceAll(
-      "{{tagline}}",
-      "工作日盯梢 · 有干货才推。Research · 厂商动态 · 新词雷达 · 剪藏。"
-    )
+    .replaceAll("{{title}}", "日报 · Daily News")
     .replaceAll("{{css_href}}", "assets/site.css")
+    .replaceAll("{{timezone}}", latestDay.timezone || "Asia/Shanghai")
     .replaceAll("{{latest_href}}", `/${latestPath}/`)
-    .replaceAll("{{latest_date}}", latest)
+    .replaceAll("{{latest_date_html}}", dateDisplay(latest))
+    .replaceAll("{{latest_weekday}}", weekdayZh(latest, latestDay.timezone))
     .replaceAll("{{latest_subtitle_html}}", subtitleHtml)
     .replaceAll("{{counts_html}}", renderCountsHtml(latestDay, latestPath))
     .replaceAll("{{previews_html}}", renderPreviewsHtml(previews))
+    .replaceAll("{{archive_count}}", String(dates.length))
     .replaceAll("{{archive_html}}", renderArchiveHtml(dates, byDate, latest))
     .replaceAll(
       "{{footer}}",
@@ -280,11 +316,7 @@ function build() {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(OUT, { recursive: true });
 
-  const outAssets = path.join(OUT, "assets");
-  fs.mkdirSync(outAssets, { recursive: true });
-  for (const f of fs.readdirSync(ASSETS)) {
-    fs.copyFileSync(path.join(ASSETS, f), path.join(outAssets, f));
-  }
+  copyDir(ASSETS, path.join(OUT, "assets"));
 
   const template = fs.readFileSync(TEMPLATE, "utf8");
   const days = loadDays();
@@ -312,21 +344,20 @@ function build() {
     const prev = dates[i - 1];
     const next = dates[i + 1];
     const prevLink = prev
-      ? `<a href="/${dateParts(prev).path}/">← ${prev}</a>`
+      ? `<a class="jump jump-prev" href="/${dateParts(prev).path}/"><span class="jump-dir">上一期</span><span class="jump-date">${prev}</span></a>`
       : "";
     const nextLink = next
-      ? `<a href="/${dateParts(next).path}/">${next} →</a>`
+      ? `<a class="jump jump-next" href="/${dateParts(next).path}/"><span class="jump-dir">下一期</span><span class="jump-date">${next}</span></a>`
       : "";
+    const dateBits = [weekdayZh(date, day.timezone)];
+    if (day.subtitle) dateBits.push(day.subtitle);
 
     const html = template
-      .replaceAll("{{title}}", `Daily News · ${date}`)
+      .replaceAll("{{title}}", `日报 · ${date}`)
       .replaceAll("{{heading}}", date)
-      .replaceAll(
-        "{{date_line}}",
-        `${day.timezone || "Asia/Shanghai"}${
-          day.subtitle ? ` · ${day.subtitle}` : ""
-        }`
-      )
+      .replaceAll("{{timezone}}", day.timezone || "Asia/Shanghai")
+      .replaceAll("{{date_display}}", dateDisplay(date))
+      .replaceAll("{{date_line}}", dateBits.join(" · "))
       .replaceAll("{{css_href}}", assetHref(3, "site.css"))
       .replaceAll("{{js_href}}", assetHref(3, "site.js"))
       .replaceAll("{{prev_link}}", prevLink)

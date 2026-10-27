@@ -4,43 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
 <title>{{title}}</title>
 <link rel="stylesheet" href="{{css_href}}">
 </head>
 <body class="home">
-  <div class="home-wrap">
-    <header class="home-header">
-      <p class="site-name">Daily News</p>
-      <h1>{{heading}}</h1>
-      <p class="home-tagline">{{tagline}}</p>
-      <p class="home-cta">
-        <a class="btn-primary" href="{{latest_href}}">进入今日 · {{latest_date}}</a>
-      </p>
+  <a class="skip" href="#latest">跳到最新一期</a>
+  <div class="sheet">
+    <header class="mast">
+      <div class="mast-top">
+        <a class="wordmark" href="/">
+          <span class="wordmark-zh">日报</span>
+          <span class="wordmark-en">Daily</span>
+        </a>
+        <p class="mast-kicker">工作日盯梢 · 有干货才推</p>
+        <p class="mast-place">{{timezone}}</p>
+      </div>
+      <div class="mast-rule" aria-hidden="true"></div>
     </header>
 
-    <section class="home-latest" aria-labelledby="latest-heading">
-      <div class="home-latest-top">
-        <h2 id="latest-heading">最新一期</h2>
-        <a class="home-latest-date" href="{{latest_href}}">{{latest_date}}</a>
+    <section class="issue" id="latest" aria-labelledby="latest-heading">
+      <div class="issue-lockup">
+        <div class="issue-kicker-row">
+          <p class="issue-kicker" id="latest-heading">最新一期</p>
+          <p class="issue-weekday">{{latest_weekday}}</p>
+        </div>
+        <h1 class="issue-date"><a href="{{latest_href}}">{{latest_date_html}}</a></h1>
+        {{latest_subtitle_html}}
       </div>
-      {{latest_subtitle_html}}
-      <ul class="home-counts">
+      <ol class="issue-index">
         {{counts_html}}
-      </ul>
-      <ol class="home-previews">
+      </ol>
+      <ol class="issue-list">
         {{previews_html}}
       </ol>
-      <p class="home-more"><a href="{{latest_href}}">阅读完整日报 →</a></p>
+      <p class="issue-more"><a href="{{latest_href}}">阅读完整一期</a></p>
     </section>
 
-    <section class="home-archive" aria-labelledby="archive-heading">
-      <h2 id="archive-heading">往期</h2>
-      <ul class="home-day-list">
+    <section class="archive" aria-labelledby="archive-heading">
+      <header class="block-head">
+        <h2 class="block-title" id="archive-heading">往期</h2>
+        <p class="block-count">{{archive_count}} 期</p>
+      </header>
+      <ul class="archive-list">
         {{archive_html}}
       </ul>
     </section>
 
-    <footer>{{footer}}</footer>
+    <footer class="colophon">{{footer}}</footer>
   </div>
 </body>
 </html>

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "安静日 · 无独立日报稿，页面对空",
+  "quiet": true,
+  "footer": "工作日盯梢 · 有干货才推 · Research · 厂商 · 新词雷达 · 剪藏",
+  "sections": {
+    "research": {
+      "title": "Research",
+      "items": []
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": []
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": []
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "本日无 saved_at=2026-10-25 的剪藏。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": []
+    }
+  }
+}

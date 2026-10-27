@@ -1,0 +1,14 @@
+{
+  "name": "daily-haorui-dev",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lightweight static Daily News for Hao Rui — template + JSON fill",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "new-day": "node scripts/new-day.mjs",
+    "preview": "npx --yes serve public -l 4173"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

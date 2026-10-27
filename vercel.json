@@ -1,0 +1,11 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/2026/10/27/",
+      "permanent": false
+    }
+  ]
+}

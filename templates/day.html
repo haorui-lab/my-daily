@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>{{title}}</title>
+<link rel="stylesheet" href="{{css_href}}">
+</head>
+<body>
+  <div class="shell">
+    <aside class="toc" id="toc" aria-label="目录">
+      <div class="toc-brand">
+        <a class="toc-site" href="/">Daily News</a>
+        <p class="toc-date">{{heading}}</p>
+        <p class="toc-sub">{{date_line}}</p>
+      </div>
+      <nav class="toc-nav" id="toc-nav">
+        {{toc_html}}
+      </nav>
+      <div class="toc-nav-links">
+        <a href="/">最新</a>{{prev_link}}{{next_link}}
+      </div>
+    </aside>
+
+    <div class="main-col">
+      <header class="page-header">
+        <div class="header-top">
+          <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-drawer" hidden>
+            目录
+          </button>
+          <p class="site-name"><a href="/">Daily News</a></p>
+        </div>
+        <h1>{{heading}}</h1>
+        <p class="date">{{date_line}}</p>
+        <p class="nav"><a href="/">最新</a>{{prev_link}}{{next_link}}</p>
+      </header>
+
+      <div class="toc-drawer" id="toc-drawer" hidden>
+        <nav class="toc-nav toc-nav--mobile" aria-label="移动端目录">
+          {{toc_html}}
+        </nav>
+      </div>
+
+      <main class="content">
+        {{sections_html}}
+      </main>
+
+      <footer>{{footer}}</footer>
+    </div>
+  </div>
+  <script src="{{js_href}}" defer></script>
+</body>
+</html>

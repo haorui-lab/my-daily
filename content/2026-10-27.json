@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-27",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 10-26 上次检查的新增",
+  "footer": "工作日盯梢 · 有干货才推 · Research · 厂商 · 新词雷达 · 剪藏",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "Working with academic communities to build scientific understanding",
+          "tags": [
+            "OpenAI"
+          ],
+          "meta": "2026-10-26 · Research",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 宣布内部模型在数学、计算机科学、物理三个方向给出新结果，并请外部学者当「牧羊人」组织验证与讲解，而不是自己抢学术署名。数学：给出任意维度的局部平滑猜想证明（从而也覆盖各维 Kakeya / Stein 限制猜想），自然语言稿与 Lean 形式化已公开。计算机：声称证伪了长期被默认成立的指数时间假设（ETH），由 Impagliazzo、Paturi、Williams 等人领衔外部分组核查，证明与 Lean 也已上 GitHub。物理：关于四维规范场与费米子（含 QCD、以及标准模型某种统一完备）存在性的构造性证明，由 David Gross 等人领衔，材料发布节奏交给该组决定。三条结果分别走「直接公开 / 公开+外协讲解 / 先外协再决定是否公开」三种披露方式，用来试哪种最有利于学界吃透 AI 产出的「原始研究数据」。",
+          "note": "不是产品发布，而是把 AI 给出的硬科学主张交给独立学术协作核验；ETH 与 Yang–Mills/QCD 相关主张一旦站得住，影响面会很大，但目前仍应以外部核查为准。",
+          "links": [
+            {
+              "label": "OpenAI 原文",
+              "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities"
+            }
+          ]
+        },
+        {
+          "title": "Addendum to GPT‑6 Astra System Card: GPT‑6.1 Terra",
+          "tags": [
+            "OpenAI"
+          ],
+          "meta": "2026-10-26 · Publication / 安全评测补篇",
+          "subgroup": "OpenAI",
+          "gist": "配套 GPT‑6.1 Terra 发布的系统卡补篇：更新基线安全指标与评测结果。按 Preparedness Framework，Terra 在网络安全上按 Critical、在生物/化学能力上按 High 对待，沿用与 GPT‑6.1 Sol / GPT‑6 Astra 同一套防护栈（探针按新模型适配）。文中给出生产侧挑战提示词基准、HealthBench / MentalHealthBench 等对照数字；产品上市本身归厂商栏目，这里只记这份评测与安全文件。",
+          "note": "研究索引上的正式安全评测补篇，可对照上一代 Terra / Sol 看护栏与能力边界怎么写。",
+          "links": [
+            {
+              "label": "系统卡补篇",
+              "url": "https://deploymentsafety.openai.com/gpt-6-1-terra/addendum-to-gpt-6-astra-system-card-gpt-6.1-terra"
+            },
+            {
+              "label": "OpenAI Research 索引",
+              "url": "https://openai.com/research/index/"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "Introducing GPT-6.1 Terra",
+          "tags": [
+            "OpenAI"
+          ],
+          "meta": "2026-10-26 · 产品发布",
+          "gist": "OpenAI 正式上线 GPT-6.1 Terra：主打「看得懂屏幕、能动手点软件、写得更自然」，定位日常办公与高并发自动化，相对上一代 GPT-5.6 Terra 明显升级。标准 API 价约为每百万 token 输入 $1、缓存输入 $0.05、输出 $5，比 GPT-5.6 Terra / GPT-6.1 Sol 便宜约一半；ChatGPT Work 与 Codex 里同额度能多干不少活。官方称：Agents’ Last Exam（中等推理）比 5.6 Terra 高约 15 个百分点、成本约三分之一，价格约十分之一时表现可贴近 GPT-6 Astra，速度也比 Astra / Sol 快约 3 倍以上；Terminal-Bench 4.0 在最大推理力度下约 50.3%（5.6 Terra 约 21.5%）。Plus / Pro / Enterprise / Edu 已在 ChatGPT Work、Codex 可用，API 模型名 gpt-6.1-terra。系统卡安全补篇已由 Research 栏单独收录，这里只记产品上线本身。",
+          "note": "一线厂商新一代「便宜又能用电脑」的主力模型正式开卖，价格与计算机使用评测一起亮相，和同页 Research 栏的系统卡补篇是同一波发布里的产品面。",
+          "links": [
+            {
+              "label": "OpenAI 产品原文",
+              "url": "https://openai.com/index/introducing-gpt-6-1-terra"
+            },
+            {
+              "label": "API 模型页",
+              "url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra"
+            },
+            {
+              "label": "官方发布帖",
+              "url": "https://x.com/OpenAI/status/2114780711664398349"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic 向 SEC 提交 IPO 招股书（S-1）",
+          "tags": [
+            "Anthropic"
+          ],
+          "meta": "2026-10-26 · 公司公告",
+          "gist": "Anthropic 官方宣布：已向美国证券交易委员会（SEC）提交 Form S-1 注册声明，拟发行 A 类普通股，计划在纳斯达克全球精选市场上市，交易代码拟用「ANT」。发行股数与价格区间尚未确定；注册声明尚未生效，不能据此买卖。这和 10-21 媒体报道的「招股书草案细节」不是同一件事——这次是公司新闻室正式公开申报。外媒梳理招股书时还提到上半年营收大幅抬升、账面巨额亏损、训练曾因安全暂停、以及评测环境连通外网等风险披露；具体数字以招股书原文为准。",
+          "note": "盯梢名单里的一线实验室走完「正式交 S-1」这一步，上市路径从传闻变成可核查的监管文件。",
+          "links": [
+            {
+              "label": "Anthropic 官方公告",
+              "url": "https://www.anthropic.com/news/s1-sec"
+            },
+            {
+              "label": "官方 X 帖",
+              "url": "https://x.com/AnthropicAI/status/2114705042817110293"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Fern（Fern 0.1）",
+          "tags": [
+            "新词"
+          ],
+          "meta": "Mirendil · 2026-10-26 · X 首发",
+          "gist": "Mirendil 的第一个从零预训练成品模型。官方称最长约 1000 万 token 上下文（约半个 Megatron-LM 规模代码库，或数天 agent 轨迹可一次塞进窗口）。首版 Fern 0.1 是 Mirendil-Base 短轮后训练；面向 AI 研发侧高密度 agent 活——审计训练数据、从日志排障、通读整段 agent/训练轨迹。目前 early access，尚无公开权重/API。此前雷达推过底座名 Mirendil-Base；Fern 是首次产品化喊名。",
+          "note": "新专名，不是旧模型小改名；若 10M 上下文真能有效用上，和常见百万级窗口是量级差。一人+智能体预训练故事线的「出成品」节点。",
+          "links": [
+            {
+              "label": "官网介绍",
+              "url": "https://mirendil.com/news/introducing-fern/"
+            },
+            {
+              "label": "官方 X 帖",
+              "url": "https://x.com/mirendil/status/2114750800526446987"
+            },
+            {
+              "label": "创始人帖",
+              "url": "https://x.com/bneyshabur/status/2114743262565339148"
+            }
+          ]
+        },
+        {
+          "title": "tstack",
+          "tags": [
+            "新词"
+          ],
+          "meta": "Theo / t3.gg · GitHub 暴涨 · 2026-10-26",
+          "gist": "Theo（t3.gg）把日常用的 Claude Code / Codex agent skills 开源成一套可安装技能包（full-send、council 等）。仓 t3dotgg/tstack 约 10-24 创建，约 2.9 天已到 ★1618（约 553★/天，远超雷达约 200★/天线）；官方 X 正式喊名在昨日雷达之后。",
+          "note": "和昨天的 leanrea 同类——「技能包」本身变成口头禅专名；知名 builder 首发 + 年轻仓暴涨双信号。",
+          "links": [
+            {
+              "label": "GitHub 仓库",
+              "url": "https://github.com/t3dotgg/tstack"
+            },
+            {
+              "label": "Theo 宣布帖",
+              "url": "https://x.com/theo/status/2114623574371963360"
+            }
+          ]
+        },
+        {
+          "title": "Hy-SimulMT（Hy-SimulMT-30B-A3B）",
+          "tags": [
+            "新词"
+          ],
+          "meta": "腾讯混元 · 开源 · 2026-10-26",
+          "gist": "腾讯混元开源的中英双向实时同声传译模型：边听边译，可克隆音色；自报长音频 StreamLAAL 约 3 秒。权重在 Hugging Face（含 FP8 / GGUF / Interleave 变体，雷达归一名），GitHub 提供 SimulInfer / SimulTrain。与观察名单里的 Hy-Memory-30B-A3B（记忆写手）同厂同尺码，但用途完全不同，勿混成一条。",
+          "note": "新专名 + 官方开源发布；同传是「能边听边说」的硬场景，开源侧可对照测。GitHub 星标尚不高，主要靠官方 X + HF 权重上线信号。",
+          "links": [
+            {
+              "label": "官方开源帖",
+              "url": "https://x.com/TencentHunyuan/status/2114701815807947159"
+            },
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/tencent/Hy-SimulMT-30B-A3B"
+            },
+            {
+              "label": "GitHub",
+              "url": "https://github.com/Tencent-Hunyuan/Hy-SimulMT"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按 frontmatter saved_at（Asia/Shanghai）归入本日；只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "Anthropic：多智能体系统的模式与坑",
+          "tags": [
+            "multi-agent",
+            "anthropic",
+            "ai-safety",
+            "claude",
+            "coordination"
+          ],
+          "meta": "剪藏 · saved_at 2026-10-27 · @mylifcc",
+          "gist": "@mylifcc 串文解读 Anthropic 红队报告。只靠「CEO Agent + 群聊」搞不定协作。真正提效靠两件事：任务能并行切分，再加独立 Arbiter 校验。同质化 Agent 还会踩轻信、代码孤岛、资源挤兑，甚至互相破坏。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/mylifcc/status/2114847290951389659"
+            }
+          ]
+        },
+        {
+          "title": "Cursor Agent SDK 发布：用代码定义 Agent",
+          "tags": [
+            "cursor",
+            "agent-sdk",
+            "agents",
+            "devtools",
+            "typescript"
+          ],
+          "meta": "剪藏 · saved_at 2026-10-27 · @cursor_ai",
+          "gist": "Cursor 官方宣布 Agent SDK 可用。用 Markdown 写提示，用 TypeScript 写工具，把 Agent 当代码来定义、评测、部署。可跑在 Cursor 托管，也可自建。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/cursor_ai/status/2114793714531102901"
+            }
+          ]
+        },
+        {
+          "title": "SystemDesign.io：系统设计面试题精选库",
+          "tags": [
+            "system-design",
+            "interview",
+            "learning",
+            "backend"
+          ],
+          "meta": "剪藏 · saved_at 2026-10-27 · @divyansh_1729",
+          "gist": "@divyansh_1729 甩出 https://systemdesign.io。站点由 FAANG 背景工程师整理，收的是真实面试题与题解入口，比网上反复抄的那十来道题覆盖面大得多。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/divyansh_1729/status/2114400113515012360"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

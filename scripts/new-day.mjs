@@ -38,7 +38,7 @@ const stub = {
   timezone: "Asia/Shanghai",
   subtitle: "",
   quiet: true,
-  footer: "工作日盯梢 · 有干货才推 · Research · 厂商 · 新词雷达 · 剪藏",
+  footer: "Daily News",
   sections: {
     research: { title: "Research", items: [] },
     vendors: { title: "厂商动态", items: [] },

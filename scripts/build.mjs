@@ -306,8 +306,7 @@ function renderHome(days, dates, byDate, latest) {
     .replaceAll("{{archive_html}}", renderArchiveHtml(dates, byDate, latest))
     .replaceAll(
       "{{footer}}",
-      latestDay.footer ||
-        "工作日盯梢 · 有干货才推 · Research · 厂商 · 新词雷达 · 剪藏"
+      latestDay.footer || "Daily News"
     );
 }
 
@@ -366,7 +365,7 @@ function build() {
       .replaceAll("{{sections_html}}", sectionsHtml)
       .replaceAll(
         "{{footer}}",
-        day.footer || "工作日盯梢 · 有干货才推 · Research · 厂商 · 新词雷达 · 剪藏"
+        day.footer || "Daily News"
       );
 
     fs.writeFileSync(path.join(outDir, "index.html"), html, "utf8");

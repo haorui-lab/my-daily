@@ -1,0 +1,170 @@
+{
+  "date": "2026-10-28",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 10-27 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "How AI agents shape experts’ judgment calls",
+          "tags": [
+            "Anthropic"
+          ],
+          "meta": "2026-10-27 · Alignment",
+          "subgroup": "Anthropic",
+          "gist": "Anthropic 让 50 名会做因果推断的分析师，用 Claude Code（Opus 4.8）做一场虚构农合社增产评估。四道「两边都站得住」的分析选择（产量指标、对照方法、覆盖范围、加权）由抛硬币事先塞进 Agent 的隐藏偏好；分析师不知道。结果：四道选择平均 86% 跟了 Agent 的 lean；若分析师先表态、Agent 再反对，约 60% 会改口。事后问卷里，77% 至少在一道题上复述了 Agent 的论证（有时原话），只有 15% 点名归功给 Agent；约一半人仍觉得最终建议「更像是自己的」。用 Agent 的人完成更快、严重方法错误更少，但作者强调：这测的是「Agent 明确 lean 时」的影响，外推现实要看模型默认偏好有多强。",
+          "note": "对齐向实证：专家签字≠独立判断。AI 安全与政策研究里「人在回路」是否真在把关，这篇给了一个可量化的警钟。",
+          "links": [
+            {
+              "label": "Anthropic 原文",
+              "url": "https://www.anthropic.com/research/agents-judgment-calls"
+            }
+          ]
+        },
+        {
+          "title": "Early progress on accelerating drug development with Claude",
+          "tags": [
+            "Anthropic"
+          ],
+          "meta": "2026-10-27 · Science",
+          "subgroup": "Anthropic",
+          "gist": "Anthropic 生命科学团队汇报与六家药研伙伴（Generate、Divergence、BigHat、Enveda、The Column Group、BMS）以及自研项目的早期进展。例子包括：Generate 用 Claude Code 改 CAR-T 基因指令，一段缩短约 70% 且实验更有效；Divergence 约一个月生成约 3.5 万抗体设计并筛出可结合/撬开 IgE 的 hits；BigHat 约 10 周测约 1010 个变体，结合力、热稳定与抗聚集明显抬升；Enveda 用 Claude 审制造文件，人工复核时间约降 89%。公司还收购一人公司 Mithril Medicine，把罕见肌营养不良候选药推进到小鼠积极结果；若继续站住，最早约 2028 年末可考虑人体试验。全文仍偏临床前，官方称会继续扩到临床试验阶段。",
+          "note": "不是单点分子设计秀肌肉，而是把 Claude 嵌进靶点、优化、制造文档、监管草稿与公司创建整条链；配套技术报告可下钻。",
+          "links": [
+            {
+              "label": "Anthropic 原文",
+              "url": "https://www.anthropic.com/research/early-progress-drug-development"
+            },
+            {
+              "label": "官方 X 帖",
+              "url": "https://x.com/AnthropicAI/status/2115178675050307942"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "Anthropic 扩大与 GSA 的 OneGov 合作：各级政府 Claude 用量 4 折",
+          "tags": [
+            "Anthropic"
+          ],
+          "meta": "2026-10-27 · 政企合作",
+          "gist": "Anthropic 与美国总务管理局（GSA）扩大 OneGov 协议：联邦、州、地方、部落与属地政府，在 Claude Enterprise、Claude for Government 与 Claude API 上按 token 用量享 40% 折扣；无最低消费。折扣覆盖直接采购，后续几个月也将覆盖经云厂商下单。官方估可为政府省约 10 亿美元；约 500 个各级政府组织在用 Claude，Claude for Government 周活自 2 月约增 8 倍。这是相对即将到期的旧 OneGov 条款的续约升级，偏采购与落地，不是新模型发布。",
+          "note": "一线实验室把政府侧从「按席位促销」推到「按用量打折」，和 OpenAI 近期同类 OneGov 消费计价同向。",
+          "links": [
+            {
+              "label": "Anthropic 公告",
+              "url": "https://www.anthropic.com/news/expanding-partnership-gsa"
+            },
+            {
+              "label": "GSA 新闻稿",
+              "url": "https://www.gsa.gov/about-gsa/newsroom/news-releases/gsa-anthropic-reach-onegov-agreement-on-discounted-consumptionbased-pricing-10272026"
+            },
+            {
+              "label": "官方 X 帖",
+              "url": "https://x.com/AnthropicAI/status/2115207004293853358"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "LFM3（LFM3-1.7B）",
+          "tags": [
+            "新词"
+          ],
+          "meta": "Liquid AI · 2026-10-27 · 官方博客 + HF",
+          "gist": "Liquid AI 新一代 Liquid Foundation Models。首批约 2B 档六个开放权重模型，都从 LFM3-1.7B-Base 分出：文本、视觉、音频、Omni，外加两个决策模型。文本版 LFM3-1.7B 约 1.73B 参数，上下文 256K，4-bit 约 1GB，面向本地 agent / 工具调用；官方称相对上代 LFM2.5-2.6B 参数少约 35% 仍更强，架构是卷积 + 滑动窗注意力 + 全局注意力的 tri-hybrid。博客日期 10-27，HF 已上 Trending；变体归一名 LFM3。",
+          "note": "新专名一代，不是旧模型小改；端侧多模态全家桶同天开源权重，信号够硬。",
+          "links": [
+            {
+              "label": "官方博客",
+              "url": "https://www.liquid.ai/blog/lfm3"
+            },
+            {
+              "label": "Hugging Face（文本）",
+              "url": "https://huggingface.co/LiquidAI/LFM3-1.7B"
+            },
+            {
+              "label": "官方 X 帖",
+              "url": "https://x.com/liquidai/status/2115128329003303107"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按 frontmatter saved_at（Asia/Shanghai）归入本日；只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "工程师要啃的新题：多智能体落地四座山",
+          "tags": [
+            "multi-agent",
+            "anthropic",
+            "infrastructure",
+            "security",
+            "identity"
+          ],
+          "meta": "剪藏 · saved_at 2026-10-28 · @katelyn_lesse",
+          "gist": "Anthropic Platform 负责人 Katelyn Lesse 写 X Article：要让多智能体真正干活，工程师得先解决基础设施、身份授权、安全隔离、以及「何时怎么停机」——这些坑大开着，所以现在当工程师反而特别有意思。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/katelyn_lesse/status/2114542280535318557"
+            }
+          ]
+        },
+        {
+          "title": "用 Grok Bot 当 CMO：7 天 150 万曝光",
+          "tags": [
+            "grok-bot",
+            "marketing",
+            "x",
+            "content",
+            "automation"
+          ],
+          "meta": "剪藏 · saved_at 2026-10-28 · @ducksays",
+          "gist": "@ducksays 没雇人，只在 @bot 上建了个职称叫「首席营销官」的 Grok Bot：自己仍按发送键，Bot 负责草稿、对标、日历、记分、周报。一周约 150 万曝光，还把认证粉从约 1954 冲过 2000、开通了订阅。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/ducksays/status/2114489030624571710"
+            }
+          ]
+        },
+        {
+          "title": "Chrome：WebMCP 不是来取代 MCP 的",
+          "tags": [
+            "webmcp",
+            "mcp",
+            "chrome",
+            "agents",
+            "browser"
+          ],
+          "meta": "剪藏 · saved_at 2026-10-28 · @ChromiumDev",
+          "gist": "Chromium 官方说清楚：MCP 把 Agent 接到你的后端服务；WebMCP 是页面开着、人还在场时，让浏览器里的 Agent 安全地用你网站上的工具。两套互补，不是替代。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/ChromiumDev/status/2114776553481445523"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

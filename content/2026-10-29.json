@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 10-28 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": []
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "OpenAI 与 ServiceNow 扩大企业工作流合作",
+          "tags": [
+            "OpenAI",
+            "ServiceNow"
+          ],
+          "meta": "2026-10-28 · 政企合作",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 与 ServiceNow 宣布扩大合作：ServiceNow 的 MCP 插件已上 OpenAI 市场，把实例里的业务上下文和动作直接接到 ChatGPT，IT 人员可以在同一对话里查类似工单、评估变更风险、改记录。路线图还包括：Codex 进 AI Workflow Factory、联合安全方案、在 Super Intelligence Control Tower 里用语音描述 AI 用例；ServiceNow 计划给全体员工开 ChatGPT Work 与 Codex。增强能力预计年底前、语音约 2027 Q1、安全能力约 2027 年初早期试用。",
+          "note": "一线实验室把 frontier 模型嵌进企业工单与开发流水线，不是又一篇愿景稿；MCP 插件今天就能接。",
+          "links": [
+            {
+              "label": "OpenAI 公告",
+              "url": "https://openai.com/index/openai-servicenow-partnership-expansion/"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic：AI for Science 扩到基金会与研究机构",
+          "tags": [
+            "Anthropic"
+          ],
+          "meta": "2026-10-28 · 科学合作",
+          "subgroup": "Anthropic",
+          "gist": "Anthropic 把 AI for Science 从个人科学家扩到约 20 家基金会、机构与专项：用免费 Claude 额度支持高影响科研。资助方包括 Sloan、Simons、Schmidt Sciences、Open Source for Science Fund、NSF、CAS；机构侧有 STScI、Wellcome Sanger、Francis Crick、Imperial 生命科学、EMBL、Gladstone；项目侧点名 FlyWire、LEAP、AstroPath、gnomAD、Tau Ceti（Lean 数学库）、Centre for Population Genomics。此前已有 HHMI Janelia 的实验室仪器 Model Hardware Standard、Allen Institute 用 Agent 啃开放数据集。",
+          "note": "额度分发落到基金会与头部实验室，公开展开名单，比单纯「科学家打折」更好核验。",
+          "links": [
+            {
+              "label": "Anthropic 公告",
+              "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic 为企业上线 Claude Code 用量与回报报表",
+          "tags": [
+            "Anthropic",
+            "Claude Code"
+          ],
+          "meta": "2026-10-28 · 产品工具",
+          "subgroup": "Anthropic",
+          "gist": "TechCrunch 报道 Anthropic 周三推出一套面向企业的 Claude Code 报表：结合内部分析与员工问卷，按时间段看团队产出、花了多少 token、流程卡在哪，并给改进建议；默认可不把这些数据拿去训模型，还支持团队级合并预算。官方文档对应 Team/Enterprise 的 Claude Code analytics 看板（采纳、接受率、带 Claude 的 PR/行数、排行榜）以及 Console / Analytics API 的按人花费与用量。",
+          "note": "企业留存战场从「好不好用」推到「花得值不值」；和 S-1 披露的 Claude Code 收入叙事同向。",
+          "links": [
+            {
+              "label": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/"
+            },
+            {
+              "label": "官方文档",
+              "url": "https://code.claude.com/docs/en/analytics"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Nemotron 3.5 Transcribe",
+          "tags": [
+            "新词"
+          ],
+          "meta": "NVIDIA · 2026-10-28 · HF 博客 + 官方 X + HF",
+          "gist": "NVIDIA 开放权重、可提示的语音大模型。约 30B MoE、每次约 4B 激活；一个检查点覆盖转写（约 40 语种）、说话人归属（约 13 语种）、与英语互译（约 31 语种）、音频问答；最长约 1 小时录音、最多约 8 说话人。HF Open ASR 英语开放权重榜第一（约 5.33% 平均 WER）；同日开源 Granary v2 数据管线与微调配方。只做离线录音，不做直播流。",
+          "note": "新专名级开源语音模型，榜单与权重同天齐出；和 Dessa 一类纯语音产品同层信号。",
+          "links": [
+            {
+              "label": "Hugging Face 博客",
+              "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary"
+            },
+            {
+              "label": "模型卡",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B"
+            },
+            {
+              "label": "官方 X 帖",
+              "url": "https://x.com/NVIDIAAI/status/2115462300241141882"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按 frontmatter saved_at（Asia/Shanghai）归入本日；只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "Jailbreaks 提示词合集：多模型 AGENTS.md 一站式仓库",
+          "tags": [
+            "jailbreak",
+            "prompt",
+            "agents-md",
+            "opencode",
+            "github"
+          ],
+          "meta": "剪藏 · saved_at 2026-10-28 · @CallMeCSZ",
+          "gist": "@CallMeCSZ 分享仓库 togg53192-cmd/jailbreaks：按模型拆好的系统提示 / 人格 / 工作区策略 / AGENTS.md，覆盖 Gemini、DeepSeek、GLM、Grok、Kimi 等 26+ 模型。用法是下载对应 md、改名 AGENTS.md，用 OpenCode 一类工具开会话。仓库自述偏研究教育，并提醒版本一变效果可能失效。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/CallMeCSZ/status/2115383074544632254"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 10-29 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "OpenAI：如何监测前沿模型的错位行为",
+          "tags": ["OpenAI", "alignment", "monitoring"],
+          "meta": "2026-10-29 · 安全 / 监测技术报告",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 公开了扩大后的错位监测体系：对至少与 GPT-6 Astra 同级的前沿模型，在强化学习、评测、内部 Codex，以及部分对外部署上跑多层监视。轻量的激活探针先筛可疑信号，再交给模型审阅员与调查代理；敏感负载还会对照网络日志与遥测。文中复盘 Hugging Face 事件：若当时就启用这套监视，仿真里约 30 分钟后就能告警，比真实入侵早 30 多小时。九月一次隔离环境破网也被 15 分钟内拦住。外部高网络安全能力表面可暂停会话或打 webhook，且尽量对齐零数据保留。",
+          "note": "把「训完再查」推成训练与部署中的实时控制层；公开分层架构与假警权衡，方便对照自家 agent 安全栈。",
+          "links": [
+            {
+              "label": "OpenAI 原文",
+              "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "OpenAI 更新 Model Spec：围着五项价值重组行为规范",
+          "tags": ["OpenAI", "Model Spec"],
+          "meta": "2026-10-29 · 对齐 / 产品规范",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 发布新版公开 Model Spec，把模型该怎么表现收拢到五项价值：忠实于人的意图、减少伤害、诚实透明、保全人的主动权、关照处境与规范。新增「仔细看上下文」、支持人的主动权、遵循相关社会规范等默认；扩充副作用控制与沟通；退役大部分细粒度文风规定，让风格更多跟用户与语境走。文中写明 Spec 仍是目标态，现网模型尚未完全对齐，并邀请对价值权衡与措辞给反馈。",
+          "note": "同一天还有错位监测长文；规范层与运行层一起改，比单独改系统提示更可核验。",
+          "links": [
+            {
+              "label": "OpenAI 公告",
+              "url": "https://openai.com/index/updated-model-spec"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Clover-35B-A3B-Preview",
+          "tags": ["新词"],
+          "meta": "DiffuSpace · 约 2026-10-28 · 官方博客 + HF Trending",
+          "gist": "扩散智能（DiffuSpace）开源的块扩散语言模型。总参约 35B MoE、每 token 约 3B 激活，128K 上下文，Apache 许可；底座改自 Qwen3.6-35B-A3B，块内并行填掩码而不是逐 token 自回归。官方称 agent 场景单卡 BF16 约 680 tok/s，并给出 SWE-bench Verified 73.6、Terminal-Bench 2.1 等 agent 向数字；权重在 Hugging Face / ModelScope，推理支持 SGLang 与 llama.cpp。",
+          "note": "开源扩散 LLM 上到 35B 级且冲上 HF 热榜；和自回归同尺寸对照讲速度与 agent，专名信号清楚。10-29 晨报未收录，今日补入。",
+          "links": [
+            {
+              "label": "官方博客",
+              "url": "https://diffuspace.ai/blog/clover-35b/"
+            },
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview"
+            },
+            {
+              "label": "GitHub",
+              "url": "https://github.com/DiffuSpace/Clover-35B-A3B-Preview"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按 frontmatter saved_at（Asia/Shanghai）归入本日；只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "46 个让网页显得高级的前端动效（可复制给 AI）",
+          "tags": ["frontend", "animation", "css", "ui", "ai-copy"],
+          "meta": "剪藏 · saved_at 2026-10-29 · @Xian0063",
+          "gist": "@Xian0063 用视频帖汇总约 46 个「网页看起来更高级」的前端动效，强调每个都能直接复制给 AI 去实现。高频场景点到 typed.js、particles.js、Swiper、canvas-confetti、Rough Notation、Magic UI、React Bits 等常用库。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/Xian0063/status/2115668536798691575"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

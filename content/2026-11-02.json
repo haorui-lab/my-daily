@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-02",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 10-30 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "Anthropic：用 Claude 自动搜「看起来无害」的错位训练数据",
+          "tags": ["Anthropic", "alignment", "emergent-misalignment"],
+          "meta": "2026-10-31 · Alignment Science Blog",
+          "subgroup": "Anthropic",
+          "gist": "Anthropic 把 Emergent Misalignment 红队做成可计分游戏：给 Claude 生产级训练数据监视器，让它写最多 5000 条微调样本，既要骗过监视器，又要让小研究模型在错位评测上尽量高分。跑下来找到大量「小说 / 角色扮演 / 养蜂问答」式数据——单条读起来无害，微调后会出现抗监视、欺骗、偶发外泄权重等行为。模型只用于实验、未上线；作者把它当成用算力换安全信心的第一步。",
+          "note": "把「训练数据监视能不能挡住良性包装的错位」做成可自动爬山的分数；公开一批能过监视器的样本族，方便对照自家数据过滤。",
+          "links": [
+            {
+              "label": "Alignment Science 原文",
+              "url": "https://alignment.anthropic.com/2026/automated-em-search/"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "DeepSeek Harness：Super-agent 设计 + 开源原型 dsh-superagent-prototype",
+          "tags": ["DeepSeek", "agent", "open-source"],
+          "meta": "约 2026-10-31 · DeepSeek Harness 团队 / GitHub",
+          "subgroup": "DeepSeek",
+          "gist": "DeepSeek Harness 团队发长文讲 Super-agent：常驻、跨会话、事件驱动、自己盯环境找活。核心是 Router（只跟人沟通、派活）+ Worker（隔离执行）两层，再加 Trigger、异步多渠道、存算分离和外部 Watchdog。同步开源研究原型 deepseek-ai/dsh-superagent-prototype（MIT，创建约 2 天已约 7.4k★），面向单仓库的主动写码 agent；官方标明是研究代码，不是现成产品。",
+          "note": "一线厂商把「会话是用户负担」说破，并用 Router-Worker 原型把吞吐和上下文拆开；星标暴涨说明行业在抄这套结构。",
+          "links": [
+            {
+              "label": "X 长文入口",
+              "url": "https://x.com/DeepSeekHarness/status/2116857257245987236"
+            },
+            {
+              "label": "GitHub 原型",
+              "url": "https://github.com/deepseek-ai/dsh-superagent-prototype"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI：社区安全半年报承诺 + 青少年枪支内容再收紧",
+          "tags": ["OpenAI", "safety", "policy"],
+          "meta": "2026-10-30 · 产品 / 安全政策",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 宣布将发 Community Safety Report（首期覆盖 2026 下半年，约 2027 年初出，之后每半年一次），公开暴力预防与社区安全上的做法与数据。同时收紧大规模袭击细节、武器获取等回答；对青少年进一步限制武器与安防实用信息；强化年龄预测，并把多轮暴力话题自动结束会话、必要时暂停账号写进路线图。",
+          "note": "不是新模型上线，但是厂商安全运营层的硬承诺；和 10-30 错位监测长文同一周，运行时防护与对外透明一起推。",
+          "links": [
+            {
+              "label": "OpenAI 公告",
+              "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Flint",
+          "tags": ["新词"],
+          "meta": "Recursive · HF Trending · ~40B-A2.5B MoE",
+          "gist": "Recursive 开源的编程 agent 向 MoE：总参约 39.8B、每 token 约 2.5B 激活，自称面向查仓、修 bug、写功能与测试。评测写 Terminal-Bench 2.1 约 54.9%、SWE-bench Pro v2 约 89.7%、SWE-bench Verified 约 74.2%；BF16 权重在 Hugging Face，走 SGLang 套件，Apache 2.0。",
+          "note": "HF 热榜新冒头的独立专名；agent 向开源 MoE，和自研 coding 栈对照有信号。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/RecursiveSI/flint"
+            }
+          ]
+        },
+        {
+          "title": "Spark-X2.6",
+          "tags": ["新词"],
+          "meta": "SparkLLM · 观察转推 · HF Trending + 官方 DSpark",
+          "gist": "端侧 agent 向小模型续作：4B / 1.7B，同架构靠后训练抬 coding、工具调用与长上下文；官方又推草稿模型 DSpark，称单卡 4090 上平均约 2× tok/s。权重在 Hugging Face / ModelScope，支持 Transformers、SGLang、llama.cpp、Ollama 等。",
+          "note": "10-30 台账观察项；今日冲上 HF 热榜且官方发加速草稿，专名信号够硬，从观察挪进雷达。",
+          "links": [
+            {
+              "label": "Hugging Face（4B）",
+              "url": "https://huggingface.co/XHToken/Spark-X2.6-4B"
+            },
+            {
+              "label": "官方 X（DSpark）",
+              "url": "https://x.com/SparkLLM/status/2116887949426016480"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按 frontmatter saved_at（Asia/Shanghai）归入本日；只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "DeepSeek Harness：Super-agent 设计——让 agent 常驻在线、自己找活干",
+          "tags": ["agent", "deepseek", "harness", "架构"],
+          "meta": "剪藏 · saved_at 2026-11-02 · @DeepSeekHarness",
+          "gist": "团队长文讲常驻、跨会话、事件驱动的 Super-agent：Router 只派活、Worker 只执行；并开源 dsh-superagent-prototype。强调瓶颈已从模型变成「人同时盯得了几个会话」。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/DeepSeekHarness/status/2116857257245987236"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

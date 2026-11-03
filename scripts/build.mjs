@@ -79,6 +79,50 @@ function softHtml(s) {
   return t;
 }
 
+/**
+ * Render gist as intro paragraph(s) + optional Markdown-style bullet list.
+ * Consecutive lines starting with "- " or "* " become <ul class="gist-list">.
+ * Plain non-empty lines become <p class="body">. No bullets → single <p class="body"> (unchanged).
+ */
+function formatGist(gist) {
+  const raw = String(gist ?? "");
+  if (!raw.trim()) return `<p class="body"></p>`;
+
+  const lines = raw.split(/\r?\n/);
+  const hasBullets = lines.some((line) => /^[-*]\s+/.test(line.trimStart()));
+  if (!hasBullets) {
+    return `<p class="body">${softHtml(raw.trim())}</p>`;
+  }
+
+  const parts = [];
+  let bulletBuf = [];
+
+  const flushBullets = () => {
+    if (!bulletBuf.length) return;
+    const lis = bulletBuf
+      .map((t) => `<li>${softHtml(t)}</li>`)
+      .join("");
+    parts.push(`<ul class="gist-list">${lis}</ul>`);
+    bulletBuf = [];
+  };
+
+  for (const line of lines) {
+    const trimmedStart = line.trimStart();
+    const m = trimmedStart.match(/^[-*]\s+(.*)$/);
+    if (m) {
+      bulletBuf.push(m[1]);
+      continue;
+    }
+    flushBullets();
+    const t = line.trim();
+    if (!t) continue;
+    parts.push(`<p class="body">${softHtml(t)}</p>`);
+  }
+  flushBullets();
+
+  return parts.join("\n        ") || `<p class="body">${softHtml(raw.trim())}</p>`;
+}
+
 /** Stable short slug for anchors from section key + title (+ index for uniqueness). */
 function itemId(sectionKey, item, index) {
   const base = String(item.title || `item-${index}`)
@@ -113,7 +157,7 @@ function renderItem(item, id) {
   return `<article class="item" id="${esc(id)}">
         ${meta}
         <h3 class="item-title">${softHtml(item.title)}</h3>
-        <p class="body">${softHtml(item.gist)}</p>
+        ${formatGist(item.gist)}
         ${note}
         ${linksBlock}
       </article>`;

@@ -37,7 +37,7 @@
         "tags": { "type": "array", "items": { "type": "string" } },
         "meta": { "type": "string" },
         "subgroup": { "type": "string", "description": "Optional group label above this card (e.g. OpenAI)" },
-        "gist": { "type": "string", "description": "One-line or short paragraph body" },
+        "gist": { "type": "string", "description": "Short paragraph, or intro line(s) plus Markdown-style \"- \" bullet list" },
         "note": { "type": "string", "description": "为什么值得看" },
         "links": { "type": "array", "items": { "$ref": "#/$defs/link" } }
       }

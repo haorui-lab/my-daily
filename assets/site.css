@@ -678,6 +678,28 @@ a:any-link {
   text-wrap: pretty;
 }
 
+.gist-list {
+  max-width: 40rem;
+  margin: 0.55rem 0 0;
+  padding-left: 1.35rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  letter-spacing: 0.014em;
+  list-style: disc;
+}
+
+.gist-list li + li {
+  margin-top: 0.28rem;
+}
+
+.body + .gist-list {
+  margin-top: 0.45rem;
+}
+
+.gist-list + .body {
+  margin-top: 0.7rem;
+}
+
 .note {
   max-width: 40rem;
   margin-top: 0.95rem;

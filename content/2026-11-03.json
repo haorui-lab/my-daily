@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-03",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-02 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "OpenAI LifeVal：测 AI 能不能帮人把日常事办完",
+          "tags": ["OpenAI", "eval", "agents"],
+          "meta": "2026-11-02 · Research",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 发布 LifeVal：按时间使用调查和约 3995 人问卷，挑出托幼、健康、教育、家务行政、理财、购物、政府办事等日常任务，用来跟踪模型在「真做事」上的进步。文中展示幼儿园择校、防汛志愿调度、找房、远程陪看球、糖尿病照护备餐等流程；作者强调要测的是个人助理能否走完工作流，而不只是聊天给建议。任务集与打分细则未公开，外部难独立复现。",
+          "note": "把评测重心从知识题挪到日常生活落地；和 agent / computer use 产品线同一周对照看。",
+          "links": [
+            {
+              "label": "OpenAI 原文",
+              "url": "https://openai.com/index/lifeval/"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI：用激活分类器（probes）做实时安全层",
+          "tags": ["OpenAI", "alignment", "safety"],
+          "meta": "2026-11-02 · Alignment Research Blog",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 写清已在最强模型上部署激活分类器（probes）：读中间层残差流，按 token 流式打分，超阈值立刻打断回复并拦住工具调用，再交给推理模型复核。相对文本分类器更抗部分越狱、算力更轻；局限是只能盯住标过的失败类型，换底座或权重漂太多就要重训。从 GPT-5.6 起叠进既有文本监视栈。",
+          "note": "把白盒探针写进生产安全栈的方法文；和 10-29 错位监测长文同一条防线。",
+          "links": [
+            {
+              "label": "Alignment 原文",
+              "url": "https://alignment.openai.com/training-activation-classifiers/"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "OpenAI Dots：接入 GPT-6 Astra / GPT-6.1 Terra 等更多前沿模型",
+          "tags": ["OpenAI", "Dots", "agents"],
+          "meta": "2026-11-02 · 产品（@thsottiaux）",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 的 Tibo 说正在扩大驱动 Dots 的前沿模型家族，包括 GPT-6 Astra、GPT-6.1 Terra 以及后续型号。Terra 侧重速度和人格，用来把常驻 agent 推给更多人。社区转述还提到 dot 会按任务段落自动挑模型；官方帖本身只确认扩模型和 Terra 定位。",
+          "note": "常驻 agent 产品从单模型绑死走向多模型池；和 Terra 上线同一产品线的下一刀。",
+          "links": [
+            {
+              "label": "Tibo 原帖",
+              "url": "https://x.com/thsottiaux/status/2117283124833055196"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Hydrogen-1.0",
+          "tags": ["新词"],
+          "meta": "Deep Principle · 2026-11-02 · 开源权重科学模型",
+          "gist": "杭州 Deep Principle 在 GLM-5.3 上做科学向后训练，放出约 753B 的 Hydrogen-1.0（MIT，Hugging Face / ModelScope）。训练吃化学、材料、生命科学领域数据，以及实验室全周期记录和发现轨迹；自评 FrontierScience-Research 约 38.3%、GPQA-Diamond 约 93%，并展示聚合物 MD、反应网络、NMR 解析、材料发现等场景。",
+          "note": "一线开源科学 agent 专名刚冒头；底座挂 Z.AI GLM-5.3，但发布方与专名都是新的。",
+          "links": [
+            {
+              "label": "官方介绍",
+              "url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/"
+            },
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/deep-principle/Hydrogen-1.0"
+            }
+          ]
+        },
+        {
+          "title": "LongCat-2.5",
+          "tags": ["新词"],
+          "meta": "美团 · 2026-11-01/02 · 原生多模态 agent",
+          "gist": "美团正式推 LongCat-2.5：约 1.6T 总参、每 token 约 48B 激活，原生多模态，主打长程 coding / 视觉编程 / 创意设计与 3D。官方报 Terminal Bench v2.1 约 88.4、AutomationBench 约 51.8、3DCodeBench Text→3D 约 55.4；API 在 longcat.ai，权重暂未公开下载。",
+          "note": "国内大厂 agent 向专名正式版；和预览版 LongCat-2.0 拉开长程 RL 差距。",
+          "links": [
+            {
+              "label": "官方博客",
+              "url": "https://longcat.ai/blog/longcat-2.5/"
+            },
+            {
+              "label": "美团新闻",
+              "url": "https://www.meituan.com/news/NN261102280001343"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按 frontmatter saved_at（Asia/Shanghai）归入本日；只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "数字生命卡兹克：折腾 1 年的 Agent 自动化系统",
+          "tags": ["agent", "自动化", "中台", "飞书"],
+          "meta": "剪藏 · saved_at 2026-11-03 · @Khazix0918",
+          "gist": "卡兹克分享个人 Agent 中台：事件进规则表叫醒本机 Claude/Codex，写码走自建 CI，只有删数据、花钱、对外发消息等才飞书「批奏折」。引 DeepSeek Super-agent 的注意力瓶颈作对照。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/Khazix0918/status/2117054043868860521"
+            }
+          ]
+        },
+        {
+          "title": "forecho：根据过往对话吐槽我的提示词",
+          "tags": ["提示词", "roast", "趣味"],
+          "meta": "剪藏 · saved_at 2026-11-03 · @forecho",
+          "gist": "一段短提示词：让 AI 按已有画像用带脏话的中文大白话「烤」你；适合有记忆的会话，空白局效果弱。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/forecho/status/2117132553606123798"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

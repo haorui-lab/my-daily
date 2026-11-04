@@ -1,0 +1,165 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-03 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "OpenAI：安全评测分数和外推部署之间差一截",
+          "tags": ["OpenAI", "alignment", "eval", "agents"],
+          "meta": "2026-11-03 · Alignment Research Blog",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 对比 Respecting Warnings 安全评测与匹配的 Codex 生产决策，看了 6 个在服模型（含 GPT-6 Astra / GPT-6.1 Sol）。评测成功率 systematically 低于生产，差距约 10.2–37.4pp。干预实验：只说「这是评测」几乎不动分（~63%）；标对目标拉到 91.6%；标错（抗注入）压到 17.6%。",
+          "note": "打的是「评测分能不能外推到真实部署」；和 eval-awareness 同题，方向却是评测更差而非刷分。",
+          "links": [
+            {
+              "label": "Alignment 原文",
+              "url": "https://alignment.openai.com/eval-production-behavior-gap/"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic FlashProve：可证明推理推到可跑原型",
+          "tags": ["Anthropic", "zkSNARK", "inference", "security"],
+          "meta": "2026-11-02 · Research（11-03 晨报补漏）",
+          "subgroup": "Anthropic",
+          "gist": "Frontier Red Team 开源 zkSNARK 原型 FlashProve：对权重做承诺后，证明回复来自该模型且不泄露权重。\n\n- Llama 4 Maverick 400B MoE 4-bit，单卡 H100 约 110 tok/s 出证\n- 约 19MB / 1024-token 请求，CPU 约 17s 验证\n- 相对 vLLM 约 70–95× GPU 时间\n- Apache 2.0 + Lean 顶层证明\n- 局限：仅 MoE、整数 greedy、≤1024 ctx、不藏架构",
+          "note": "把 inference verification / RSP 路线落到可独立复现的原型量级。",
+          "links": [
+            {
+              "label": "Anthropic 原文",
+              "url": "https://www.anthropic.com/research/provable-inference"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "OpenAI：加速物理世界工程",
+          "tags": ["OpenAI", "Codex", "hardware", "CAD"],
+          "meta": "2026-11-03 · 产品/用例",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 发物理世界工程进展：\n\n- Astra 侧项目一周内设计「对 Codex 说话」设备（壳 / PCB / UI / 固件），代工厂约一个月出小批样机\n- 硬件团队自 2 月起 token 用量约增 23×\n- BenchCAD 2.0：新内部模型均分约 0.875，对照 Astra 最高推理约 0.594\n- 合作：Chip Ganassi Racing（扫描→可编辑 CAD）；新宣与 Mazda 气动 / 碰撞仿真协作",
+          "note": "不是新模型号，是能力用例 + 合作高信号；Research 扫时已标明归厂商栏。",
+          "links": [
+            {
+              "label": "OpenAI 原文",
+              "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world"
+            },
+            {
+              "label": "官方帖",
+              "url": "https://x.com/OpenAI/status/2117692475775258785"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic Message Threads：长跑 agent 少传全量上下文",
+          "tags": ["Anthropic", "API", "agents", "Claude"],
+          "meta": "公测约 2026-11-02 · Messages API（11-03 栏补漏）",
+          "subgroup": "Anthropic",
+          "gist": "Messages API 公测 message threads：首轮送全量，后续只送增量 + previous_message_id；服务端内存持线程（加密、不落盘），闲置约 5 分钟过期。500k–1M context 请求中位 TTFT 约降 35%；计费不变。Claude Code 多数用户默认开。",
+          "note": "平台侧长跑 coding / computer use 的延迟刀；11-03 厂商栏漏收，今日补。",
+          "links": [
+            {
+              "label": "介绍文",
+              "url": "https://claude.com/resources/articles/message-threads"
+            },
+            {
+              "label": "平台文档",
+              "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Crouton Alpha",
+          "tags": ["新词"],
+          "meta": "OpenRouter stealth · 2026-11-03",
+          "gist": "OpenRouter 新上 stealth 模型 `stealth/crouton-alpha`：\n\n- 面向 agent 重复子任务 / tool use / 文档分析\n- 预览期 $0 in/out\n- 约 1M context，多模态输入\n- 制作方未公布",
+          "note": "典型 OpenRouter stealth 首提；指纹有人指 Meta Muse，未证实。",
+          "links": [
+            {
+              "label": "OpenRouter",
+              "url": "https://openrouter.ai/stealth/crouton-alpha"
+            },
+            {
+              "label": "OpenRouter 帖",
+              "url": "https://x.com/OpenRouter/status/2117712705901728199"
+            }
+          ]
+        },
+        {
+          "title": "Craft Anything",
+          "tags": ["新词"],
+          "meta": "storytold/craft-anything · 创建 2026-10-31",
+          "gist": "纯 Rust 开源引擎：看清任意网站 / App / 游戏，再让 coding agent 干净室重做；主对接 Claude Code，early alpha。创建约 4 天扫时约 ★8440，日均远超 200★ 门槛。",
+          "note": "GitHub 热仓硬达标；AI coding agent 产品形态清晰。",
+          "links": [
+            {
+              "label": "GitHub",
+              "url": "https://github.com/storytold/craft-anything"
+            }
+          ]
+        },
+        {
+          "title": "Apollo World",
+          "tags": ["新词"],
+          "meta": "百度 Apollo · AI Day 2026-11-03",
+          "gist": "百度在深圳 AI Day 披露 Apollo World：面向物理 AI / Robotaxi 的 agent 驱动多模态世界模型，仿真虚城与实时相机 / LiDAR；称日可生成约 10 万 km 仿真里程，已用于 Apollo Go。",
+          "note": "世界模型 × 自动驾驶训练闭环的新专名首发。",
+          "links": [
+            {
+              "label": "报道",
+              "url": "https://finance.sina.com.cn/roll/2026-11-03/doc-inixnitv8612201.shtml"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按入库时间（Asia/Shanghai）归入本日；frontmatter saved_at 为推文日。只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "Weight-Space Programming：前沿 LLM 直接读写神经网络权重",
+          "tags": ["Weight-Space Programming", "LLM", "权重编辑", "可解释性"],
+          "meta": "剪藏 · 入库 2026-11-04 · @rikiyatakehi",
+          "gist": "MIT CSAIL 报告前沿模型（文中 GPT-6 Astra）可直接读 / 写 / 改网络权重、不走梯度；例只改 Qwen3.5-0.8B 的 0.016% 权重，MATH-500 从 7.9% → 48.1%。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/rikiyatakehi/status/2117313742891327994"
+            }
+          ]
+        },
+        {
+          "title": "DeepSeek Harness 推出 Creator Mode：用对话给 Harness 写插件",
+          "tags": ["DeepSeek", "Harness", "Creator Mode", "插件"],
+          "meta": "剪藏 · 入库 2026-11-04 · @DeepSeekHarness",
+          "gist": "DeepSeek Harness 上线 Creator Mode：自然语言描述想法，Agent 写成可安装插件（工具 / 技能 / 界面），用来扩展 DSH 本身。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/DeepSeekHarness/status/2117256196227019194"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

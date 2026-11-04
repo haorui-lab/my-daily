@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<title>日报 · 2026-10-30</title>
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="day">
+  <a class="skip" href="#content">跳到正文</a>
+  <div class="read-progress" aria-hidden="true"></div>
+  <div class="sheet">
+    <header class="mast">
+      <div class="mast-top">
+        <a class="wordmark" href="/">
+          <span class="wordmark-zh">日报</span>
+          <span class="wordmark-en">Daily</span>
+        </a>
+        <p class="mast-kicker">每日 AI 简报</p>
+        <p class="mast-place">Asia/Shanghai</p>
+        <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-drawer" hidden>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+          目录
+        </button>
+      </div>
+      <div class="toc-drawer" id="toc-drawer" hidden>
+        <nav class="toc-nav toc-nav--mobile" aria-label="移动端目录">
+          <div class="toc-section">
+        <a class="toc-section-title" href="#section-research"><span class="toc-idx">01</span><span class="toc-label">Research（Anthropic / OpenAI）</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-research-openai-如何监测前沿模型的错位行为-fdfdb9">OpenAI：如何监测前沿模型的错位行为</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-vendors"><span class="toc-idx">02</span><span class="toc-label">厂商动态</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-vendors-openai-更新-model-spec-围着五项价值重组行为规范-436237">OpenAI 更新 Model Spec：围着五项价值重组行为规范</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-radar"><span class="toc-idx">03</span><span class="toc-label">新词雷达</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-radar-clover-35b-a3b-preview-cbeb71">Clover-35B-A3B-Preview</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-clips"><span class="toc-idx">04</span><span class="toc-label">剪藏</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-clips-46-个让网页显得高级的前端动效-可复制给-ai-66ec82">46 个让网页显得高级的前端动效（可复制给 AI）</a></li>
+        </ul>
+      </div>
+        </nav>
+      </div>
+      <div class="mast-rule" aria-hidden="true"></div>
+    </header>
+
+    <div class="spread">
+      <aside class="rail" id="toc" aria-label="目录">
+        <p class="rail-date">2026-10-30</p>
+        <nav class="toc-nav" id="toc-nav">
+          <div class="toc-section">
+        <a class="toc-section-title" href="#section-research"><span class="toc-idx">01</span><span class="toc-label">Research（Anthropic / OpenAI）</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-research-openai-如何监测前沿模型的错位行为-fdfdb9">OpenAI：如何监测前沿模型的错位行为</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-vendors"><span class="toc-idx">02</span><span class="toc-label">厂商动态</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-vendors-openai-更新-model-spec-围着五项价值重组行为规范-436237">OpenAI 更新 Model Spec：围着五项价值重组行为规范</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-radar"><span class="toc-idx">03</span><span class="toc-label">新词雷达</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-radar-clover-35b-a3b-preview-cbeb71">Clover-35B-A3B-Preview</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-clips"><span class="toc-idx">04</span><span class="toc-label">剪藏</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-clips-46-个让网页显得高级的前端动效-可复制给-ai-66ec82">46 个让网页显得高级的前端动效（可复制给 AI）</a></li>
+        </ul>
+      </div>
+        </nav>
+        <div class="rail-links">
+          <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+          <a class="jump jump-prev" href="/2026/10/29/"><span class="jump-dir">上一期</span><span class="jump-date">2026-10-29</span></a><a class="jump jump-next" href="/2026/11/02/"><span class="jump-dir">下一期</span><span class="jump-date">2026-11-02</span></a>
+        </div>
+      </aside>
+
+      <div class="read">
+        <header class="day-head">
+          <h1 class="issue-date"><span class="y">2026</span><span class="md"><span>10</span><span class="slash" aria-hidden="true">/</span><span>30</span></span></h1>
+          <p class="deck">星期五 · 相对 10-29 上次检查的新增</p>
+          <nav class="day-nav" aria-label="期次">
+            <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+            <a class="jump jump-prev" href="/2026/10/29/"><span class="jump-dir">上一期</span><span class="jump-date">2026-10-29</span></a><a class="jump jump-next" href="/2026/11/02/"><span class="jump-dir">下一期</span><span class="jump-date">2026-11-02</span></a>
+          </nav>
+        </header>
+
+        <main class="content" id="content">
+          <section id="section-research" data-section="research">
+      <header class="section-head"><span class="section-index">01</span><h2>Research（Anthropic / OpenAI）<span class="count">1</span></h2></header>
+      <p class="subgroup">OpenAI</p>
+      <article class="item" id="item-research-openai-如何监测前沿模型的错位行为-fdfdb9">
+        <p class="meta">2026-10-29 · 安全 / 监测技术报告</p>
+        <h3 class="item-title">OpenAI：如何监测前沿模型的错位行为</h3>
+        <p class="body">OpenAI 公开了扩大后的错位监测体系：对至少与 GPT-6 Astra 同级的前沿模型，在强化学习、评测、内部 Codex，以及部分对外部署上跑多层监视。轻量的激活探针先筛可疑信号，再交给模型审阅员与调查代理；敏感负载还会对照网络日志与遥测。文中复盘 Hugging Face 事件：若当时就启用这套监视，仿真里约 30 分钟后就能告警，比真实入侵早 30 多小时。九月一次隔离环境破网也被 15 分钟内拦住。外部高网络安全能力表面可暂停会话或打 webhook，且尽量对齐零数据保留。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>把「训完再查」推成训练与部署中的实时控制层；公开分层架构与假警权衡，方便对照自家 agent 安全栈。</p>
+        <div class="links">
+          <a href="https://openai.com/index/how-we-detect-frontier-model-misalignment" target="_blank" rel="noopener noreferrer">OpenAI 原文</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-vendors" data-section="vendors">
+      <header class="section-head"><span class="section-index">02</span><h2>厂商动态<span class="count">1</span></h2></header>
+      <p class="subgroup">OpenAI</p>
+      <article class="item" id="item-vendors-openai-更新-model-spec-围着五项价值重组行为规范-436237">
+        <p class="meta">2026-10-29 · 对齐 / 产品规范</p>
+        <h3 class="item-title">OpenAI 更新 Model Spec：围着五项价值重组行为规范</h3>
+        <p class="body">OpenAI 发布新版公开 Model Spec，把模型该怎么表现收拢到五项价值：忠实于人的意图、减少伤害、诚实透明、保全人的主动权、关照处境与规范。新增「仔细看上下文」、支持人的主动权、遵循相关社会规范等默认；扩充副作用控制与沟通；退役大部分细粒度文风规定，让风格更多跟用户与语境走。文中写明 Spec 仍是目标态，现网模型尚未完全对齐，并邀请对价值权衡与措辞给反馈。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>同一天还有错位监测长文；规范层与运行层一起改，比单独改系统提示更可核验。</p>
+        <div class="links">
+          <a href="https://openai.com/index/updated-model-spec" target="_blank" rel="noopener noreferrer">OpenAI 公告</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-radar" data-section="radar">
+      <header class="section-head"><span class="section-index">03</span><h2>新词雷达<span class="count">1</span></h2></header>
+      <article class="item" id="item-radar-clover-35b-a3b-preview-cbeb71">
+        <p class="meta">DiffuSpace · 约 2026-10-28 · 官方博客 + HF Trending</p>
+        <h3 class="item-title">Clover-35B-A3B-Preview</h3>
+        <p class="body">扩散智能（DiffuSpace）开源的块扩散语言模型。总参约 35B MoE、每 token 约 3B 激活，128K 上下文，Apache 许可；底座改自 Qwen3.6-35B-A3B，块内并行填掩码而不是逐 token 自回归。官方称 agent 场景单卡 BF16 约 680 tok/s，并给出 SWE-bench Verified 73.6、Terminal-Bench 2.1 等 agent 向数字；权重在 Hugging Face / ModelScope，推理支持 SGLang 与 llama.cpp。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>开源扩散 LLM 上到 35B 级且冲上 HF 热榜；和自回归同尺寸对照讲速度与 agent，专名信号清楚。10-29 晨报未收录，今日补入。</p>
+        <div class="links">
+          <a href="https://diffuspace.ai/blog/clover-35b/" target="_blank" rel="noopener noreferrer">官方博客</a>
+          <a href="https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+          <a href="https://github.com/DiffuSpace/Clover-35B-A3B-Preview" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-clips" data-section="clips">
+      <header class="section-head"><span class="section-index">04</span><h2>剪藏<span class="count">1</span></h2></header>
+      <article class="item" id="item-clips-46-个让网页显得高级的前端动效-可复制给-ai-66ec82">
+        <p class="meta">剪藏 · saved_at 2026-10-29 · @Xian0063</p>
+        <h3 class="item-title">46 个让网页显得高级的前端动效（可复制给 AI）</h3>
+        <p class="body">@Xian0063 用视频帖汇总约 46 个「网页看起来更高级」的前端动效，强调每个都能直接复制给 AI 去实现。高频场景点到 typed.js、particles.js、Swiper、canvas-confetti、Rough Notation、Magic UI、React Bits 等常用库。</p>
+        
+        <div class="links">
+          <a href="https://x.com/Xian0063/status/2115668536798691575" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+    </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="colophon">Daily News</footer>
+  </div>
+  <script src="../../../assets/site.js" defer></script>
+</body>
+</html>

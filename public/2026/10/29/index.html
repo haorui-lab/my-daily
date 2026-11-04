@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<title>日报 · 2026-10-29</title>
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="day">
+  <a class="skip" href="#content">跳到正文</a>
+  <div class="read-progress" aria-hidden="true"></div>
+  <div class="sheet">
+    <header class="mast">
+      <div class="mast-top">
+        <a class="wordmark" href="/">
+          <span class="wordmark-zh">日报</span>
+          <span class="wordmark-en">Daily</span>
+        </a>
+        <p class="mast-kicker">每日 AI 简报</p>
+        <p class="mast-place">Asia/Shanghai</p>
+        <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-drawer" hidden>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+          目录
+        </button>
+      </div>
+      <div class="toc-drawer" id="toc-drawer" hidden>
+        <nav class="toc-nav toc-nav--mobile" aria-label="移动端目录">
+          <div class="toc-section is-empty">
+        <a class="toc-section-title" href="#section-research"><span class="toc-idx">01</span><span class="toc-label">Research（Anthropic / OpenAI）</span></a>
+        
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-vendors"><span class="toc-idx">02</span><span class="toc-label">厂商动态</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-vendors-openai-与-servicenow-扩大企业工作流合作-d7ada1">OpenAI 与 ServiceNow 扩大企业工作流合作</a></li>
+          <li><a href="#item-vendors-anthropic-ai-for-science-扩到基金会与研究机构-98dff5">Anthropic：AI for Science 扩到基金会与研究机构</a></li>
+          <li><a href="#item-vendors-anthropic-为企业上线-claude-code-用量与回报报表-c0e13b">Anthropic 为企业上线 Claude Code 用量与回报报表</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-radar"><span class="toc-idx">03</span><span class="toc-label">新词雷达</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-radar-nemotron-3-5-transcribe-6b8257">Nemotron 3.5 Transcribe</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-clips"><span class="toc-idx">04</span><span class="toc-label">剪藏</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-clips-jailbreaks-提示词合集-多模型-agents-md-一站式仓库-00b937">Jailbreaks 提示词合集：多模型 AGENTS.md 一站式仓库</a></li>
+        </ul>
+      </div>
+        </nav>
+      </div>
+      <div class="mast-rule" aria-hidden="true"></div>
+    </header>
+
+    <div class="spread">
+      <aside class="rail" id="toc" aria-label="目录">
+        <p class="rail-date">2026-10-29</p>
+        <nav class="toc-nav" id="toc-nav">
+          <div class="toc-section is-empty">
+        <a class="toc-section-title" href="#section-research"><span class="toc-idx">01</span><span class="toc-label">Research（Anthropic / OpenAI）</span></a>
+        
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-vendors"><span class="toc-idx">02</span><span class="toc-label">厂商动态</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-vendors-openai-与-servicenow-扩大企业工作流合作-d7ada1">OpenAI 与 ServiceNow 扩大企业工作流合作</a></li>
+          <li><a href="#item-vendors-anthropic-ai-for-science-扩到基金会与研究机构-98dff5">Anthropic：AI for Science 扩到基金会与研究机构</a></li>
+          <li><a href="#item-vendors-anthropic-为企业上线-claude-code-用量与回报报表-c0e13b">Anthropic 为企业上线 Claude Code 用量与回报报表</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-radar"><span class="toc-idx">03</span><span class="toc-label">新词雷达</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-radar-nemotron-3-5-transcribe-6b8257">Nemotron 3.5 Transcribe</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-clips"><span class="toc-idx">04</span><span class="toc-label">剪藏</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-clips-jailbreaks-提示词合集-多模型-agents-md-一站式仓库-00b937">Jailbreaks 提示词合集：多模型 AGENTS.md 一站式仓库</a></li>
+        </ul>
+      </div>
+        </nav>
+        <div class="rail-links">
+          <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+          <a class="jump jump-prev" href="/2026/10/28/"><span class="jump-dir">上一期</span><span class="jump-date">2026-10-28</span></a><a class="jump jump-next" href="/2026/10/30/"><span class="jump-dir">下一期</span><span class="jump-date">2026-10-30</span></a>
+        </div>
+      </aside>
+
+      <div class="read">
+        <header class="day-head">
+          <h1 class="issue-date"><span class="y">2026</span><span class="md"><span>10</span><span class="slash" aria-hidden="true">/</span><span>29</span></span></h1>
+          <p class="deck">星期四 · 相对 10-28 上次检查的新增</p>
+          <nav class="day-nav" aria-label="期次">
+            <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+            <a class="jump jump-prev" href="/2026/10/28/"><span class="jump-dir">上一期</span><span class="jump-date">2026-10-28</span></a><a class="jump jump-next" href="/2026/10/30/"><span class="jump-dir">下一期</span><span class="jump-date">2026-10-30</span></a>
+          </nav>
+        </header>
+
+        <main class="content" id="content">
+          <section id="section-research" data-section="research" class="is-empty">
+      <header class="section-head"><span class="section-index">01</span><h2>Research（Anthropic / OpenAI）</h2></header>
+      <p class="empty">本日无条目。</p>
+    </section>
+
+    <section id="section-vendors" data-section="vendors">
+      <header class="section-head"><span class="section-index">02</span><h2>厂商动态<span class="count">3</span></h2></header>
+      <p class="subgroup">OpenAI</p>
+      <article class="item" id="item-vendors-openai-与-servicenow-扩大企业工作流合作-d7ada1">
+        <p class="meta">2026-10-28 · 政企合作</p>
+        <h3 class="item-title">OpenAI 与 ServiceNow 扩大企业工作流合作</h3>
+        <p class="body">OpenAI 与 ServiceNow 宣布扩大合作：ServiceNow 的 MCP 插件已上 OpenAI 市场，把实例里的业务上下文和动作直接接到 ChatGPT，IT 人员可以在同一对话里查类似工单、评估变更风险、改记录。路线图还包括：Codex 进 AI Workflow Factory、联合安全方案、在 Super Intelligence Control Tower 里用语音描述 AI 用例；ServiceNow 计划给全体员工开 ChatGPT Work 与 Codex。增强能力预计年底前、语音约 2027 Q1、安全能力约 2027 年初早期试用。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>一线实验室把 frontier 模型嵌进企业工单与开发流水线，不是又一篇愿景稿；MCP 插件今天就能接。</p>
+        <div class="links">
+          <a href="https://openai.com/index/openai-servicenow-partnership-expansion/" target="_blank" rel="noopener noreferrer">OpenAI 公告</a>
+        </div>
+      </article>
+
+      <p class="subgroup">Anthropic</p>
+      <article class="item" id="item-vendors-anthropic-ai-for-science-扩到基金会与研究机构-98dff5">
+        <p class="meta">2026-10-28 · 科学合作</p>
+        <h3 class="item-title">Anthropic：AI for Science 扩到基金会与研究机构</h3>
+        <p class="body">Anthropic 把 AI for Science 从个人科学家扩到约 20 家基金会、机构与专项：用免费 Claude 额度支持高影响科研。资助方包括 Sloan、Simons、Schmidt Sciences、Open Source for Science Fund、NSF、CAS；机构侧有 STScI、Wellcome Sanger、Francis Crick、Imperial 生命科学、EMBL、Gladstone；项目侧点名 FlyWire、LEAP、AstroPath、gnomAD、Tau Ceti（Lean 数学库）、Centre for Population Genomics。此前已有 HHMI Janelia 的实验室仪器 Model Hardware Standard、Allen Institute 用 Agent 啃开放数据集。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>额度分发落到基金会与头部实验室，公开展开名单，比单纯「科学家打折」更好核验。</p>
+        <div class="links">
+          <a href="https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions" target="_blank" rel="noopener noreferrer">Anthropic 公告</a>
+        </div>
+      </article>
+
+      <article class="item" id="item-vendors-anthropic-为企业上线-claude-code-用量与回报报表-c0e13b">
+        <p class="meta">2026-10-28 · 产品工具</p>
+        <h3 class="item-title">Anthropic 为企业上线 Claude Code 用量与回报报表</h3>
+        <p class="body">TechCrunch 报道 Anthropic 周三推出一套面向企业的 Claude Code 报表：结合内部分析与员工问卷，按时间段看团队产出、花了多少 token、流程卡在哪，并给改进建议；默认可不把这些数据拿去训模型，还支持团队级合并预算。官方文档对应 Team/Enterprise 的 Claude Code analytics 看板（采纳、接受率、带 Claude 的 PR/行数、排行榜）以及 Console / Analytics API 的按人花费与用量。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>企业留存战场从「好不好用」推到「花得值不值」；和 S-1 披露的 Claude Code 收入叙事同向。</p>
+        <div class="links">
+          <a href="https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/" target="_blank" rel="noopener noreferrer">TechCrunch</a>
+          <a href="https://code.claude.com/docs/en/analytics" target="_blank" rel="noopener noreferrer">官方文档</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-radar" data-section="radar">
+      <header class="section-head"><span class="section-index">03</span><h2>新词雷达<span class="count">1</span></h2></header>
+      <article class="item" id="item-radar-nemotron-3-5-transcribe-6b8257">
+        <p class="meta">NVIDIA · 2026-10-28 · HF 博客 + 官方 X + HF</p>
+        <h3 class="item-title">Nemotron 3.5 Transcribe</h3>
+        <p class="body">NVIDIA 开放权重、可提示的语音大模型。约 30B MoE、每次约 4B 激活；一个检查点覆盖转写（约 40 语种）、说话人归属（约 13 语种）、与英语互译（约 31 语种）、音频问答；最长约 1 小时录音、最多约 8 说话人。HF Open ASR 英语开放权重榜第一（约 5.33% 平均 WER）；同日开源 Granary v2 数据管线与微调配方。只做离线录音，不做直播流。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>新专名级开源语音模型，榜单与权重同天齐出；和 Dessa 一类纯语音产品同层信号。</p>
+        <div class="links">
+          <a href="https://huggingface.co/blog/nvidia/nemotron-transcribe-granary" target="_blank" rel="noopener noreferrer">Hugging Face 博客</a>
+          <a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B" target="_blank" rel="noopener noreferrer">模型卡</a>
+          <a href="https://x.com/NVIDIAAI/status/2115462300241141882" target="_blank" rel="noopener noreferrer">官方 X 帖</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-clips" data-section="clips">
+      <header class="section-head"><span class="section-index">04</span><h2>剪藏<span class="count">1</span></h2></header>
+      <article class="item" id="item-clips-jailbreaks-提示词合集-多模型-agents-md-一站式仓库-00b937">
+        <p class="meta">剪藏 · saved_at 2026-10-28 · @CallMeCSZ</p>
+        <h3 class="item-title">Jailbreaks 提示词合集：多模型 AGENTS.md 一站式仓库</h3>
+        <p class="body">@CallMeCSZ 分享仓库 togg53192-cmd/jailbreaks：按模型拆好的系统提示 / 人格 / 工作区策略 / AGENTS.md，覆盖 Gemini、DeepSeek、GLM、Grok、Kimi 等 26+ 模型。用法是下载对应 md、改名 AGENTS.md，用 OpenCode 一类工具开会话。仓库自述偏研究教育，并提醒版本一变效果可能失效。</p>
+        
+        <div class="links">
+          <a href="https://x.com/CallMeCSZ/status/2115383074544632254" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+    </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="colophon">Daily News</footer>
+  </div>
+  <script src="../../../assets/site.js" defer></script>
+</body>
+</html>

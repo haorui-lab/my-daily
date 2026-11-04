@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<title>日报 · 2026-11-02</title>
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="day">
+  <a class="skip" href="#content">跳到正文</a>
+  <div class="read-progress" aria-hidden="true"></div>
+  <div class="sheet">
+    <header class="mast">
+      <div class="mast-top">
+        <a class="wordmark" href="/">
+          <span class="wordmark-zh">日报</span>
+          <span class="wordmark-en">Daily</span>
+        </a>
+        <p class="mast-kicker">每日 AI 简报</p>
+        <p class="mast-place">Asia/Shanghai</p>
+        <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-drawer" hidden>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+          目录
+        </button>
+      </div>
+      <div class="toc-drawer" id="toc-drawer" hidden>
+        <nav class="toc-nav toc-nav--mobile" aria-label="移动端目录">
+          <div class="toc-section">
+        <a class="toc-section-title" href="#section-research"><span class="toc-idx">01</span><span class="toc-label">Research（Anthropic / OpenAI）</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-research-anthropic-用-claude-自动搜-看起来无害-的错位训练数据-1c2f8e">Anthropic：用 Claude 自动搜「看起来无害」的错位训练数据</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-vendors"><span class="toc-idx">02</span><span class="toc-label">厂商动态</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-vendors-deepseek-harness-super-agent-设计-开源原型-dsh-superag-28d298">DeepSeek Harness：Super-agent 设计 + 开源原型 dsh-superagent-prototype</a></li>
+          <li><a href="#item-vendors-openai-社区安全半年报承诺-青少年枪支内容再收紧-f8cf57">OpenAI：社区安全半年报承诺 + 青少年枪支内容再收紧</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-radar"><span class="toc-idx">03</span><span class="toc-label">新词雷达</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-radar-flint-028850">Flint</a></li>
+          <li><a href="#item-radar-spark-x2-6-4f9ef9">Spark-X2.6</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-clips"><span class="toc-idx">04</span><span class="toc-label">剪藏</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-clips-deepseek-harness-super-agent-设计-让-agent-常驻在线-自己找-bda75f">DeepSeek Harness：Super-agent 设计——让 agent 常驻在线、自己找活干</a></li>
+        </ul>
+      </div>
+        </nav>
+      </div>
+      <div class="mast-rule" aria-hidden="true"></div>
+    </header>
+
+    <div class="spread">
+      <aside class="rail" id="toc" aria-label="目录">
+        <p class="rail-date">2026-11-02</p>
+        <nav class="toc-nav" id="toc-nav">
+          <div class="toc-section">
+        <a class="toc-section-title" href="#section-research"><span class="toc-idx">01</span><span class="toc-label">Research（Anthropic / OpenAI）</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-research-anthropic-用-claude-自动搜-看起来无害-的错位训练数据-1c2f8e">Anthropic：用 Claude 自动搜「看起来无害」的错位训练数据</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-vendors"><span class="toc-idx">02</span><span class="toc-label">厂商动态</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-vendors-deepseek-harness-super-agent-设计-开源原型-dsh-superag-28d298">DeepSeek Harness：Super-agent 设计 + 开源原型 dsh-superagent-prototype</a></li>
+          <li><a href="#item-vendors-openai-社区安全半年报承诺-青少年枪支内容再收紧-f8cf57">OpenAI：社区安全半年报承诺 + 青少年枪支内容再收紧</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-radar"><span class="toc-idx">03</span><span class="toc-label">新词雷达</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-radar-flint-028850">Flint</a></li>
+          <li><a href="#item-radar-spark-x2-6-4f9ef9">Spark-X2.6</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-clips"><span class="toc-idx">04</span><span class="toc-label">剪藏</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-clips-deepseek-harness-super-agent-设计-让-agent-常驻在线-自己找-bda75f">DeepSeek Harness：Super-agent 设计——让 agent 常驻在线、自己找活干</a></li>
+        </ul>
+      </div>
+        </nav>
+        <div class="rail-links">
+          <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+          <a class="jump jump-prev" href="/2026/10/30/"><span class="jump-dir">上一期</span><span class="jump-date">2026-10-30</span></a><a class="jump jump-next" href="/2026/11/03/"><span class="jump-dir">下一期</span><span class="jump-date">2026-11-03</span></a>
+        </div>
+      </aside>
+
+      <div class="read">
+        <header class="day-head">
+          <h1 class="issue-date"><span class="y">2026</span><span class="md"><span>11</span><span class="slash" aria-hidden="true">/</span><span>02</span></span></h1>
+          <p class="deck">星期一 · 相对 10-30 上次检查的新增</p>
+          <nav class="day-nav" aria-label="期次">
+            <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+            <a class="jump jump-prev" href="/2026/10/30/"><span class="jump-dir">上一期</span><span class="jump-date">2026-10-30</span></a><a class="jump jump-next" href="/2026/11/03/"><span class="jump-dir">下一期</span><span class="jump-date">2026-11-03</span></a>
+          </nav>
+        </header>
+
+        <main class="content" id="content">
+          <section id="section-research" data-section="research">
+      <header class="section-head"><span class="section-index">01</span><h2>Research（Anthropic / OpenAI）<span class="count">1</span></h2></header>
+      <p class="subgroup">Anthropic</p>
+      <article class="item" id="item-research-anthropic-用-claude-自动搜-看起来无害-的错位训练数据-1c2f8e">
+        <p class="meta">2026-10-31 · Alignment Science Blog</p>
+        <h3 class="item-title">Anthropic：用 Claude 自动搜「看起来无害」的错位训练数据</h3>
+        <p class="body">Anthropic 把 Emergent Misalignment 红队做成可计分游戏：给 Claude 生产级训练数据监视器，让它写最多 5000 条微调样本，既要骗过监视器，又要让小研究模型在错位评测上尽量高分。跑下来找到大量「小说 / 角色扮演 / 养蜂问答」式数据——单条读起来无害，微调后会出现抗监视、欺骗、偶发外泄权重等行为。模型只用于实验、未上线；作者把它当成用算力换安全信心的第一步。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>把「训练数据监视能不能挡住良性包装的错位」做成可自动爬山的分数；公开一批能过监视器的样本族，方便对照自家数据过滤。</p>
+        <div class="links">
+          <a href="https://alignment.anthropic.com/2026/automated-em-search/" target="_blank" rel="noopener noreferrer">Alignment Science 原文</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-vendors" data-section="vendors">
+      <header class="section-head"><span class="section-index">02</span><h2>厂商动态<span class="count">2</span></h2></header>
+      <p class="subgroup">DeepSeek</p>
+      <article class="item" id="item-vendors-deepseek-harness-super-agent-设计-开源原型-dsh-superag-28d298">
+        <p class="meta">约 2026-10-31 · DeepSeek Harness 团队 / GitHub</p>
+        <h3 class="item-title">DeepSeek Harness：Super-agent 设计 + 开源原型 dsh-superagent-prototype</h3>
+        <p class="body">DeepSeek Harness 团队发长文讲 Super-agent：常驻、跨会话、事件驱动、自己盯环境找活。核心是 Router（只跟人沟通、派活）+ Worker（隔离执行）两层，再加 Trigger、异步多渠道、存算分离和外部 Watchdog。同步开源研究原型 deepseek-ai/dsh-superagent-prototype（MIT，创建约 2 天已约 7.4k★），面向单仓库的主动写码 agent；官方标明是研究代码，不是现成产品。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>一线厂商把「会话是用户负担」说破，并用 Router-Worker 原型把吞吐和上下文拆开；星标暴涨说明行业在抄这套结构。</p>
+        <div class="links">
+          <a href="https://x.com/DeepSeekHarness/status/2116857257245987236" target="_blank" rel="noopener noreferrer">X 长文入口</a>
+          <a href="https://github.com/deepseek-ai/dsh-superagent-prototype" target="_blank" rel="noopener noreferrer">GitHub 原型</a>
+        </div>
+      </article>
+
+      <p class="subgroup">OpenAI</p>
+      <article class="item" id="item-vendors-openai-社区安全半年报承诺-青少年枪支内容再收紧-f8cf57">
+        <p class="meta">2026-10-30 · 产品 / 安全政策</p>
+        <h3 class="item-title">OpenAI：社区安全半年报承诺 + 青少年枪支内容再收紧</h3>
+        <p class="body">OpenAI 宣布将发 Community Safety Report（首期覆盖 2026 下半年，约 2027 年初出，之后每半年一次），公开暴力预防与社区安全上的做法与数据。同时收紧大规模袭击细节、武器获取等回答；对青少年进一步限制武器与安防实用信息；强化年龄预测，并把多轮暴力话题自动结束会话、必要时暂停账号写进路线图。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>不是新模型上线，但是厂商安全运营层的硬承诺；和 10-30 错位监测长文同一周，运行时防护与对外透明一起推。</p>
+        <div class="links">
+          <a href="https://openai.com/index/community-safety-report-and-new-protections-for-teens/" target="_blank" rel="noopener noreferrer">OpenAI 公告</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-radar" data-section="radar">
+      <header class="section-head"><span class="section-index">03</span><h2>新词雷达<span class="count">2</span></h2></header>
+      <article class="item" id="item-radar-flint-028850">
+        <p class="meta">Recursive · HF Trending · ~40B-A2.5B MoE</p>
+        <h3 class="item-title">Flint</h3>
+        <p class="body">Recursive 开源的编程 agent 向 MoE：总参约 39.8B、每 token 约 2.5B 激活，自称面向查仓、修 bug、写功能与测试。评测写 Terminal-Bench 2.1 约 54.9%、SWE-bench Pro v2 约 89.7%、SWE-bench Verified 约 74.2%；BF16 权重在 Hugging Face，走 SGLang 套件，Apache 2.0。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>HF 热榜新冒头的独立专名；agent 向开源 MoE，和自研 coding 栈对照有信号。</p>
+        <div class="links">
+          <a href="https://huggingface.co/RecursiveSI/flint" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+        </div>
+      </article>
+
+      <article class="item" id="item-radar-spark-x2-6-4f9ef9">
+        <p class="meta">SparkLLM · 观察转推 · HF Trending + 官方 DSpark</p>
+        <h3 class="item-title">Spark-X2.6</h3>
+        <p class="body">端侧 agent 向小模型续作：4B / 1.7B，同架构靠后训练抬 coding、工具调用与长上下文；官方又推草稿模型 DSpark，称单卡 4090 上平均约 2× tok/s。权重在 Hugging Face / ModelScope，支持 Transformers、SGLang、llama.cpp、Ollama 等。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>10-30 台账观察项；今日冲上 HF 热榜且官方发加速草稿，专名信号够硬，从观察挪进雷达。</p>
+        <div class="links">
+          <a href="https://huggingface.co/XHToken/Spark-X2.6-4B" target="_blank" rel="noopener noreferrer">Hugging Face（4B）</a>
+          <a href="https://x.com/SparkLLM/status/2116887949426016480" target="_blank" rel="noopener noreferrer">官方 X（DSpark）</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-clips" data-section="clips">
+      <header class="section-head"><span class="section-index">04</span><h2>剪藏<span class="count">1</span></h2></header>
+      <article class="item" id="item-clips-deepseek-harness-super-agent-设计-让-agent-常驻在线-自己找-bda75f">
+        <p class="meta">剪藏 · saved_at 2026-11-02 · @DeepSeekHarness</p>
+        <h3 class="item-title">DeepSeek Harness：Super-agent 设计——让 agent 常驻在线、自己找活干</h3>
+        <p class="body">团队长文讲常驻、跨会话、事件驱动的 Super-agent：Router 只派活、Worker 只执行；并开源 dsh-superagent-prototype。强调瓶颈已从模型变成「人同时盯得了几个会话」。</p>
+        
+        <div class="links">
+          <a href="https://x.com/DeepSeekHarness/status/2116857257245987236" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+    </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="colophon">Daily News</footer>
+  </div>
+  <script src="../../../assets/site.js" defer></script>
+</body>
+</html>

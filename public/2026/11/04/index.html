@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+<title>日报 · 2026-11-04</title>
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="day">
+  <a class="skip" href="#content">跳到正文</a>
+  <div class="read-progress" aria-hidden="true"></div>
+  <div class="sheet">
+    <header class="mast">
+      <div class="mast-top">
+        <a class="wordmark" href="/">
+          <span class="wordmark-zh">日报</span>
+          <span class="wordmark-en">Daily</span>
+        </a>
+        <p class="mast-kicker">每日 AI 简报</p>
+        <p class="mast-place">Asia/Shanghai</p>
+        <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-drawer" hidden>
+          <span class="toc-toggle-icon" aria-hidden="true"></span>
+          目录
+        </button>
+      </div>
+      <div class="toc-drawer" id="toc-drawer" hidden>
+        <nav class="toc-nav toc-nav--mobile" aria-label="移动端目录">
+          <div class="toc-section">
+        <a class="toc-section-title" href="#section-research"><span class="toc-idx">01</span><span class="toc-label">Research（Anthropic / OpenAI）</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-research-openai-安全评测分数和外推部署之间差一截-96ef13">OpenAI：安全评测分数和外推部署之间差一截</a></li>
+          <li><a href="#item-research-anthropic-flashprove-可证明推理推到可跑原型-cdcbb2">Anthropic FlashProve：可证明推理推到可跑原型</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-vendors"><span class="toc-idx">02</span><span class="toc-label">厂商动态</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-vendors-openai-加速物理世界工程-b4acfb">OpenAI：加速物理世界工程</a></li>
+          <li><a href="#item-vendors-anthropic-message-threads-长跑-agent-少传全量上下文-e72480">Anthropic Message Threads：长跑 agent 少传全量上下文</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-radar"><span class="toc-idx">03</span><span class="toc-label">新词雷达</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-radar-crouton-alpha-c4702c">Crouton Alpha</a></li>
+          <li><a href="#item-radar-craft-anything-5b1f46">Craft Anything</a></li>
+          <li><a href="#item-radar-apollo-world-f286bf">Apollo World</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-clips"><span class="toc-idx">04</span><span class="toc-label">剪藏</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-clips-weight-space-programming-前沿-llm-直接读写神经网络权重-b2cf41">Weight-Space Programming：前沿 LLM 直接读写神经网络权重</a></li>
+          <li><a href="#item-clips-deepseek-harness-推出-creator-mode-用对话给-harness-写插-88ab69">DeepSeek Harness 推出 Creator Mode：用对话给 Harness 写插件</a></li>
+        </ul>
+      </div>
+        </nav>
+      </div>
+      <div class="mast-rule" aria-hidden="true"></div>
+    </header>
+
+    <div class="spread">
+      <aside class="rail" id="toc" aria-label="目录">
+        <p class="rail-date">2026-11-04</p>
+        <nav class="toc-nav" id="toc-nav">
+          <div class="toc-section">
+        <a class="toc-section-title" href="#section-research"><span class="toc-idx">01</span><span class="toc-label">Research（Anthropic / OpenAI）</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-research-openai-安全评测分数和外推部署之间差一截-96ef13">OpenAI：安全评测分数和外推部署之间差一截</a></li>
+          <li><a href="#item-research-anthropic-flashprove-可证明推理推到可跑原型-cdcbb2">Anthropic FlashProve：可证明推理推到可跑原型</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-vendors"><span class="toc-idx">02</span><span class="toc-label">厂商动态</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-vendors-openai-加速物理世界工程-b4acfb">OpenAI：加速物理世界工程</a></li>
+          <li><a href="#item-vendors-anthropic-message-threads-长跑-agent-少传全量上下文-e72480">Anthropic Message Threads：长跑 agent 少传全量上下文</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-radar"><span class="toc-idx">03</span><span class="toc-label">新词雷达</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-radar-crouton-alpha-c4702c">Crouton Alpha</a></li>
+          <li><a href="#item-radar-craft-anything-5b1f46">Craft Anything</a></li>
+          <li><a href="#item-radar-apollo-world-f286bf">Apollo World</a></li>
+        </ul>
+      </div>
+      <div class="toc-section">
+        <a class="toc-section-title" href="#section-clips"><span class="toc-idx">04</span><span class="toc-label">剪藏</span></a>
+        <ul class="toc-items">
+          <li><a href="#item-clips-weight-space-programming-前沿-llm-直接读写神经网络权重-b2cf41">Weight-Space Programming：前沿 LLM 直接读写神经网络权重</a></li>
+          <li><a href="#item-clips-deepseek-harness-推出-creator-mode-用对话给-harness-写插-88ab69">DeepSeek Harness 推出 Creator Mode：用对话给 Harness 写插件</a></li>
+        </ul>
+      </div>
+        </nav>
+        <div class="rail-links">
+          <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+          <a class="jump jump-prev" href="/2026/11/03/"><span class="jump-dir">上一期</span><span class="jump-date">2026-11-03</span></a>
+        </div>
+      </aside>
+
+      <div class="read">
+        <header class="day-head">
+          <h1 class="issue-date"><span class="y">2026</span><span class="md"><span>11</span><span class="slash" aria-hidden="true">/</span><span>04</span></span></h1>
+          <p class="deck">星期三 · 相对 11-03 上次检查的新增</p>
+          <nav class="day-nav" aria-label="期次">
+            <a class="jump" href="/"><span class="jump-dir">返回</span><span class="jump-date">全部期次</span></a>
+            <a class="jump jump-prev" href="/2026/11/03/"><span class="jump-dir">上一期</span><span class="jump-date">2026-11-03</span></a>
+          </nav>
+        </header>
+
+        <main class="content" id="content">
+          <section id="section-research" data-section="research">
+      <header class="section-head"><span class="section-index">01</span><h2>Research（Anthropic / OpenAI）<span class="count">2</span></h2></header>
+      <p class="subgroup">OpenAI</p>
+      <article class="item" id="item-research-openai-安全评测分数和外推部署之间差一截-96ef13">
+        <p class="meta">2026-11-03 · Alignment Research Blog</p>
+        <h3 class="item-title">OpenAI：安全评测分数和外推部署之间差一截</h3>
+        <p class="body">OpenAI 对比 Respecting Warnings 安全评测与匹配的 Codex 生产决策，看了 6 个在服模型（含 GPT-6 Astra / GPT-6.1 Sol）。评测成功率 systematically 低于生产，差距约 10.2–37.4pp。干预实验：只说「这是评测」几乎不动分（~63%）；标对目标拉到 91.6%；标错（抗注入）压到 17.6%。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>打的是「评测分能不能外推到真实部署」；和 eval-awareness 同题，方向却是评测更差而非刷分。</p>
+        <div class="links">
+          <a href="https://alignment.openai.com/eval-production-behavior-gap/" target="_blank" rel="noopener noreferrer">Alignment 原文</a>
+        </div>
+      </article>
+
+      <p class="subgroup">Anthropic</p>
+      <article class="item" id="item-research-anthropic-flashprove-可证明推理推到可跑原型-cdcbb2">
+        <p class="meta">2026-11-02 · Research（11-03 晨报补漏）</p>
+        <h3 class="item-title">Anthropic FlashProve：可证明推理推到可跑原型</h3>
+        <p class="body">Frontier Red Team 开源 zkSNARK 原型 FlashProve：对权重做承诺后，证明回复来自该模型且不泄露权重。</p>
+        <ul class="gist-list"><li>Llama 4 Maverick 400B MoE 4-bit，单卡 H100 约 110 tok/s 出证</li><li>约 19MB / 1024-token 请求，CPU 约 17s 验证</li><li>相对 vLLM 约 70–95× GPU 时间</li><li>Apache 2.0 + Lean 顶层证明</li><li>局限：仅 MoE、整数 greedy、≤1024 ctx、不藏架构</li></ul>
+        <p class="note"><span class="note-label">为什么值得看</span>把 inference verification / RSP 路线落到可独立复现的原型量级。</p>
+        <div class="links">
+          <a href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener noreferrer">Anthropic 原文</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-vendors" data-section="vendors">
+      <header class="section-head"><span class="section-index">02</span><h2>厂商动态<span class="count">2</span></h2></header>
+      <p class="subgroup">OpenAI</p>
+      <article class="item" id="item-vendors-openai-加速物理世界工程-b4acfb">
+        <p class="meta">2026-11-03 · 产品/用例</p>
+        <h3 class="item-title">OpenAI：加速物理世界工程</h3>
+        <p class="body">OpenAI 发物理世界工程进展：</p>
+        <ul class="gist-list"><li>Astra 侧项目一周内设计「对 Codex 说话」设备（壳 / PCB / UI / 固件），代工厂约一个月出小批样机</li><li>硬件团队自 2 月起 token 用量约增 23×</li><li>BenchCAD 2.0：新内部模型均分约 0.875，对照 Astra 最高推理约 0.594</li><li>合作：Chip Ganassi Racing（扫描→可编辑 CAD）；新宣与 Mazda 气动 / 碰撞仿真协作</li></ul>
+        <p class="note"><span class="note-label">为什么值得看</span>不是新模型号，是能力用例 + 合作高信号；Research 扫时已标明归厂商栏。</p>
+        <div class="links">
+          <a href="https://openai.com/index/accelerating-engineering-for-the-physical-world" target="_blank" rel="noopener noreferrer">OpenAI 原文</a>
+          <a href="https://x.com/OpenAI/status/2117692475775258785" target="_blank" rel="noopener noreferrer">官方帖</a>
+        </div>
+      </article>
+
+      <p class="subgroup">Anthropic</p>
+      <article class="item" id="item-vendors-anthropic-message-threads-长跑-agent-少传全量上下文-e72480">
+        <p class="meta">公测约 2026-11-02 · Messages API（11-03 栏补漏）</p>
+        <h3 class="item-title">Anthropic Message Threads：长跑 agent 少传全量上下文</h3>
+        <p class="body">Messages API 公测 message threads：首轮送全量，后续只送增量 + previous_message_id；服务端内存持线程（加密、不落盘），闲置约 5 分钟过期。500k–1M context 请求中位 TTFT 约降 35%；计费不变。Claude Code 多数用户默认开。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>平台侧长跑 coding / computer use 的延迟刀；11-03 厂商栏漏收，今日补。</p>
+        <div class="links">
+          <a href="https://claude.com/resources/articles/message-threads" target="_blank" rel="noopener noreferrer">介绍文</a>
+          <a href="https://platform.claude.com/docs/en/build-with-claude/message-threads" target="_blank" rel="noopener noreferrer">平台文档</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-radar" data-section="radar">
+      <header class="section-head"><span class="section-index">03</span><h2>新词雷达<span class="count">3</span></h2></header>
+      <article class="item" id="item-radar-crouton-alpha-c4702c">
+        <p class="meta">OpenRouter stealth · 2026-11-03</p>
+        <h3 class="item-title">Crouton Alpha</h3>
+        <p class="body">OpenRouter 新上 stealth 模型 `stealth/crouton-alpha`：</p>
+        <ul class="gist-list"><li>面向 agent 重复子任务 / tool use / 文档分析</li><li>预览期 $0 in/out</li><li>约 1M context，多模态输入</li><li>制作方未公布</li></ul>
+        <p class="note"><span class="note-label">为什么值得看</span>典型 OpenRouter stealth 首提；指纹有人指 Meta Muse，未证实。</p>
+        <div class="links">
+          <a href="https://openrouter.ai/stealth/crouton-alpha" target="_blank" rel="noopener noreferrer">OpenRouter</a>
+          <a href="https://x.com/OpenRouter/status/2117712705901728199" target="_blank" rel="noopener noreferrer">OpenRouter 帖</a>
+        </div>
+      </article>
+
+      <article class="item" id="item-radar-craft-anything-5b1f46">
+        <p class="meta">storytold/craft-anything · 创建 2026-10-31</p>
+        <h3 class="item-title">Craft Anything</h3>
+        <p class="body">纯 Rust 开源引擎：看清任意网站 / App / 游戏，再让 coding agent 干净室重做；主对接 Claude Code，early alpha。创建约 4 天扫时约 ★8440，日均远超 200★ 门槛。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>GitHub 热仓硬达标；AI coding agent 产品形态清晰。</p>
+        <div class="links">
+          <a href="https://github.com/storytold/craft-anything" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <article class="item" id="item-radar-apollo-world-f286bf">
+        <p class="meta">百度 Apollo · AI Day 2026-11-03</p>
+        <h3 class="item-title">Apollo World</h3>
+        <p class="body">百度在深圳 AI Day 披露 Apollo World：面向物理 AI / Robotaxi 的 agent 驱动多模态世界模型，仿真虚城与实时相机 / LiDAR；称日可生成约 10 万 km 仿真里程，已用于 Apollo Go。</p>
+        <p class="note"><span class="note-label">为什么值得看</span>世界模型 × 自动驾驶训练闭环的新专名首发。</p>
+        <div class="links">
+          <a href="https://finance.sina.com.cn/roll/2026-11-03/doc-inixnitv8612201.shtml" target="_blank" rel="noopener noreferrer">报道</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="section-clips" data-section="clips">
+      <header class="section-head"><span class="section-index">04</span><h2>剪藏<span class="count">2</span></h2></header>
+      <article class="item" id="item-clips-weight-space-programming-前沿-llm-直接读写神经网络权重-b2cf41">
+        <p class="meta">剪藏 · 入库 2026-11-04 · @rikiyatakehi</p>
+        <h3 class="item-title">Weight-Space Programming：前沿 LLM 直接读写神经网络权重</h3>
+        <p class="body">MIT CSAIL 报告前沿模型（文中 GPT-6 Astra）可直接读 / 写 / 改网络权重、不走梯度；例只改 Qwen3.5-0.8B 的 0.016% 权重，MATH-500 从 7.9% → 48.1%。</p>
+        
+        <div class="links">
+          <a href="https://x.com/rikiyatakehi/status/2117313742891327994" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+
+      <article class="item" id="item-clips-deepseek-harness-推出-creator-mode-用对话给-harness-写插-88ab69">
+        <p class="meta">剪藏 · 入库 2026-11-04 · @DeepSeekHarness</p>
+        <h3 class="item-title">DeepSeek Harness 推出 Creator Mode：用对话给 Harness 写插件</h3>
+        <p class="body">DeepSeek Harness 上线 Creator Mode：自然语言描述想法，Agent 写成可安装插件（工具 / 技能 / 界面），用来扩展 DSH 本身。</p>
+        
+        <div class="links">
+          <a href="https://x.com/DeepSeekHarness/status/2117256196227019194" target="_blank" rel="noopener noreferrer">原文</a>
+        </div>
+      </article>
+    </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="colophon">Daily News</footer>
+  </div>
+  <script src="../../../assets/site.js" defer></script>
+</body>
+</html>

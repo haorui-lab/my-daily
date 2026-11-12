@@ -1,0 +1,220 @@
+{
+  "date": "2026-11-12",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-04 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "OpenAI：模型生命周期里，哪些东西在改 CoT 可监控性",
+          "tags": [
+            "OpenAI",
+            "alignment",
+            "CoT",
+            "monitorability"
+          ],
+          "meta": "2026-11-10 · Alignment Research Blog",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 用 no-CoT 能力和 CoT 可控性当作监控规避的代理指标，拆了预训练、架构、RL 和模型生成数据四段。\n\n- 基座 perplexity 下降，no-CoT 能力平滑上升；和 CoT 可控性的相关更弱\n- 多数评测上架构差异可被 perplexity 解释；多跳规划 / 串行计算上，个别架构在同 perplexity 下升得更陡\n- RL 即使只做长度约束和最终答案打分，CoT 可控性也会升；再加上工具过程监督，只再多一点\n- 用更可控教师的 rollout 做 SFT，学生会继承这份可控性（类似 subliminal learning）",
+          "note": "GPT-6 Astra 上已看到非对抗场景的 CoT 可监控性下降，对抗测试里也更会躲监控。文中同时承认可控性指标有噪声，和实际 evasion 并不总同向。",
+          "links": [
+            {
+              "label": "Alignment 原文",
+              "url": "https://alignment.openai.com/cot-monitorability-model-lifecycle/"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI：BioBasicsBench，测 agent 读湿实验原始数据",
+          "tags": [
+            "OpenAI",
+            "eval",
+            "biology",
+            "agents"
+          ],
+          "meta": "2026-11-06 · Research",
+          "subgroup": "OpenAI",
+          "gist": "和酶设计公司 Ligo 一起做了 100 题基准，测 agent 能不能解读凝胶、平板、显微和仪器读数这类原始实验数据，并判断证据够不够下结论。覆盖蛋白质方法、成像 / 细胞术、定量检测、核酸方法和分子克隆。xhigh 设置下 GPT-6 Astra 均分约 66.7%，对照 GPT-5.6 Sol 约 43.8%。",
+          "note": "刻意用论文图里看不到的原始实验材料，打的是日常排障，不是精修过的图表问答。",
+          "links": [
+            {
+              "label": "OpenAI 原文",
+              "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI：一次扫描为 Linux 内核补上 948 条提权路径",
+          "tags": [
+            "OpenAI",
+            "security",
+            "Linux",
+            "agents"
+          ],
+          "meta": "2026-11-04 · Research",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 用即将发布的 cyber 模型跑通「发现 → 动态复现 → 可利用性评估 → 出补丁」流水线，人类再审。\n\n- 候选 2308，动态复现 1724，产出 948 个互异的本地提权（LPE）利用，并生成对应补丁\n- 整趟 API 花费约 121.3 万美元，约合每个 LPE $1,279\n- 据称在抽样里至少 10 种对第三方专家也算新的利用手法；报告已按社区建议从高危开始往上游送\n- 在 kernelCTF 环境另得 25 个信息泄漏 PoC 和 21 个 LPE，花费约 $3.3 万",
+          "note": "948 不是已经合进主线的修复数，而是流水线产出、交给维护者审的候选补丁。文中写的是 upcoming cyber model，没有当作正式型号发布。",
+          "links": [
+            {
+              "label": "OpenAI 原文",
+              "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic：首次解析原核生物来源的 vault 三维结构",
+          "tags": [
+            "Anthropic",
+            "biology",
+            "cryo-EM"
+          ],
+          "meta": "2026-11-04 · Research",
+          "subgroup": "Anthropic",
+          "gist": "生物实验室报告：噬菌体蛋白 L05 能组装成完整 vault 样颗粒，这是他们所知首个在原核细胞体系里拿到的 3D 结构。96 拷贝、约 9.5 MDa，约 54×45 nm，比哺乳动物 vault 更短更圆，内部体积大约多 25%。Claude 参与搜库、设计构建，把分离从约 3 天压到约 90 分钟，并在约 34 小时给出首个结构模型。功能仍未知；结构口袋里还有尚未鉴定的小分子。",
+          "note": "是结构发现，不是功能结论。11-04 晨报之后见文，今日补收。",
+          "links": [
+            {
+              "label": "Anthropic 原文",
+              "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2",
+          "tags": [
+            "Anthropic",
+            "Claude",
+            "Fable",
+            "Mythos"
+          ],
+          "meta": "2026-11-09 · 产品",
+          "subgroup": "Anthropic",
+          "gist": "Anthropic 升级面向高难度技术工作的 Fable / Mythos（同一套底层模型）。Fable 带更强的网络与生物安全护栏，全面开放；Mythos 走生命科学 / 网络安全验证项目。\n\n- 定价 $8 / $40 每百万 input / output token（5.1 为 $10 / $50）；可选 Fast mode $16 / $80，生成速度最高约 2.5×\n- 相对 5.1，输出最高约快 30%；1M context，最大输出 128K；API id `claude-fable-5-2`\n- 预发布：独立完成三台电子设备从设计到可工作原型；PCB Gym 69%（Fable 5 为 25%），BenchCAD 2.1 约 83.5%，接近 5.1 的两倍\n- 已上 AWS、GCP、Azure 和 Claude 平台",
+          "note": "同日还有一篇电子设计研究文，关键评测分收在这里，不另开 Research 条。",
+          "links": [
+            {
+              "label": "官方介绍",
+              "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+            },
+            {
+              "label": "电子设计评测",
+              "url": "https://www.anthropic.com/research/claude-electronics-design"
+            }
+          ]
+        },
+        {
+          "title": "Kimi K3.1 Pro 开源权重如期上线",
+          "tags": [
+            "Kimi",
+            "Moonshot",
+            "开源权重"
+          ],
+          "meta": "2026-11-04 · 开源权重",
+          "subgroup": "Kimi",
+          "gist": "Moonshot 兑现 10 月发布时「11 月 4 日前放出权重」的承诺，Hugging Face 仓 `moonshotai/Kimi-K3.1-Pro` 已上线。\n\n- 2.8T 总参 MoE，每 token 约 104B 激活，896 专家中选 16，context 1,048,576\n- 原生多模态（文本 + 图像）；权重做了 MXFP4 / MXFP8 量化感知训练\n- 许可为 Kimi K3.1 Pro License；推理推荐 vLLM / SGLang / TokenSpeed",
+          "note": "11-04 晨报仍在观察「权重是否真上线」；当日稍后已经放到 HF，今日补收。不另开新词条。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+            },
+            {
+              "label": "技术博客",
+              "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI 发布 Images 2.6",
+          "tags": [
+            "OpenAI",
+            "Images",
+            "API"
+          ],
+          "meta": "2026-11-04 · 产品",
+          "subgroup": "OpenAI",
+          "gist": "Images 2.6 进入 ChatGPT、Codex 和 API，生成速度号称比上代快约 50%。\n\n- API 提供 GPT-Image-2.6 Flare（低质量最快约 6 秒）和 Sunburst（中高质量、跨轮编辑更稳）\n- ChatGPT 可生成 GIF，并支持保存参考图在后续对话复用\n- API 新增标记引导编辑、SVG 导出，以及控制「规划多少」的 complexity 参数",
+          "note": "11-04 晨报之后见文，属产品发布，归厂商栏。",
+          "links": [
+            {
+              "label": "OpenAI 原文",
+              "url": "https://openai.com/index/introducing-images-2-6/"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "MiniMax-H3-Image",
+          "tags": [
+            "新词"
+          ],
+          "meta": "MiniMaxAI/MiniMax-H3-Image · HF 约 2026-11-03",
+          "gist": "MiniMax H3 家族开源的文生图 / 图编辑模型，生成和编辑共用一个 checkpoint。\n\n- 直接出约 16MP（如 4096×4096），无需超分；支持最多 16 张参考图\n- DiT 约 33.1B，蒸馏到 6 步、不用 CFG\n- 文本编码器复用 MiniMax-H3 的 Qwen3-VL 文本塔",
+          "note": "HF Trending 新名，不是已有底座的量化 / demo。11-04 晨报未收。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image"
+            }
+          ]
+        },
+        {
+          "title": "Exact",
+          "tags": [
+            "新词"
+          ],
+          "meta": "expo/exact · 创建 2026-11-02",
+          "gist": "Expo 开源的跨端应用框架：同一份代码跑在 Web、macOS、iOS 和 Linux 原生界面上，并让 coding agent 在这些端上构建、运行、看见和测试。创建约 10 天，扫时约 ★2920，日均超过 200★ 门槛。",
+          "note": "GitHub 热仓硬达标；专名和产品形态都清楚。不与当日厂商发布重复。",
+          "links": [
+            {
+              "label": "GitHub",
+              "url": "https://github.com/expo/exact"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按入库时间（Asia/Shanghai）归入本日；frontmatter saved_at 为推文日。只读自 haorui-lab/my-private-clips。近 24 小时窗口外、11-04 之后入库的旧剪藏不回填到本日。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "清风：除了港卡，还有什么方式能收 X 创作者打款？支付宝不行",
+          "tags": [
+            "X创作者收益",
+            "港卡",
+            "Wise",
+            "Stripe",
+            "iFAST"
+          ],
+          "meta": "剪藏 · 入库 2026-11-12 · @airoxoo",
+          "gist": "评论区和作者较一致的说法：支付宝收不了 X 创作者打款；常见路是 Stripe 绑 Wise，或者去香港开港卡（他说损耗更低）。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/airoxoo/status/2120067833946415486"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

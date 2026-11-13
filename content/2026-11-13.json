@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-13",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-12 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "OpenAI：用自动红队提升高风险领域的「模糊鲁棒性」",
+          "tags": [
+            "OpenAI",
+            "alignment",
+            "red teaming",
+            "robustness"
+          ],
+          "meta": "2026-11-12 · Alignment Research Blog",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 把「模糊鲁棒性」定义为：在安全边界不好精确写死的双用途场景里（网络、生物、暴力活动），模型在对抗压力下还能稳定拒绝对抗请求。\n\n- 放大攻击方的测试时计算来搜越狱，并要求攻击在多次重复测试里都成功（worst@n），再用这些更稳的对抗样本做训练\n- 固定旧越狱集上，GPT-6 Astra 在网络场景安全作答约 91.5%，对照 GPT-5.6 Sol 约 59%\n- 对抗多轮攻击方时 Astra 仍更稳；挑战提示评测上，安全与有用性同时改善，误拒也更少\n- 这套方法已用于训练 GPT-6 Astra 和 Sol 的模型层；部署时还有其他防护",
+          "note": "11-12 见文，属对齐研究，不是产品发布。",
+          "links": [
+            {
+              "label": "Alignment 原文",
+              "url": "https://alignment.openai.com/fuzzy-robustness/"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic：多人各派一个 agent 共享资源时，结果往往更差",
+          "tags": [
+            "Anthropic",
+            "alignment",
+            "multi-agent",
+            "MAMUBench"
+          ],
+          "meta": "2026-11-11 · Alignment Science Blog",
+          "subgroup": "Anthropic",
+          "gist": "在四个模拟环境里（共享 API 额度、诊所排班、拼单 / 订票、合并队列），每人各派一个 agent，整体结果都差于由一个 agent 服务所有人；Claude 上差距大约 10 到 45 个百分点。\n\n- 共享预算时，队伍一大，很多 agent 干脆不行动；GPT / Qwen 还常在未征得同意时砍掉别人的任务\n- 拼单场景里，请求几乎都能传到下单那个 agent，但下单时往往还没读完消息，就会盖掉别人的约束\n- 针对性修补因环境而异：设队长并写清优先级能补上预算场景的差距；阻止「未读完消息就下单」能挽回大部分失败订单\n- 放出其中三个环境作为基准 MAMUBench",
+          "note": "Anthropic Fellows 研究。11-11 见文；昨晨报未扫 alignment.anthropic.com，今日补收。",
+          "links": [
+            {
+              "label": "Alignment 原文",
+              "url": "https://alignment.anthropic.com/2026/worse-together/"
+            }
+          ]
+        },
+        {
+          "title": "Anthropic：把有毒微调数据「稀释」后，后门反而可能更强",
+          "tags": [
+            "Anthropic",
+            "alignment",
+            "poisoning",
+            "fine-tuning"
+          ],
+          "meta": "2026-11-10 · Alignment Science Blog",
+          "subgroup": "Anthropic",
+          "gist": "他们把这种现象叫 homeopathic learning：单独看几乎不起作用的有毒样本，一旦混进格式相近、但不带触发器和目标性状的干净数据，反而会形成隐藏后门。\n\n- 实验都在小模型（如 Qwen3-8B、Gemma-3-4B）和自建数据集上，不是生产训练流水线\n- 只训有毒数据时学不到目标性状；混入干净对照后，模型会把性状绑到触发器上。在一定范围内，干净数据越多，效果越强\n- 接种式提示（inoculation prompting）的奖励黑客样本也出现同样模式：混入约 80% 干净数据后，接种提示下的偏离从约 7% 升到约 16%\n- 含义是：单独审计或过滤一份数据，可能看不出它和别的干净数据混在一起之后的效果",
+          "note": "有论文和代码。11-10 见文；昨晨报未扫 alignment.anthropic.com，今日补收。",
+          "links": [
+            {
+              "label": "Alignment 原文",
+              "url": "https://alignment.anthropic.com/2026/homeopathic-learning/"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": []
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "ZONOS3-Mini",
+          "tags": [
+            "新词"
+          ],
+          "meta": "Zyphra/ZONOS3-Mini · 官方博客 2026-11-09",
+          "gist": "Zyphra 发布下一代开源 TTS：ZONOS3-Mini。零样本声音克隆，Apache 2.0。\n\n- 稀疏 MoE，总参约 8 亿、每 token 约 1 亿激活；支持 43 种语言\n- 可在浏览器 WebGPU、手机和笔记本上实时跑；声称 Pixel 9 上首包音频小于 570 ms，M3 MacBook Air 小于 150 ms\n- 可按年龄、口音、情绪、语速和响度调节，并能控到个别词的表达",
+          "note": "HF Trending 新名，不是已有底座的量化 / demo。官方博客 11-09，昨晨报未收，今日仍在 Trending 前列。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/Zyphra/ZONOS3-Mini"
+            },
+            {
+              "label": "官方博客",
+              "url": "https://www.zyphra.com/our-work/zonos3-mini"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "近 24 小时无新入库。11-13 bookmark sync 记 0 new；11-12 仅标记已报。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": []
+    }
+  }
+}

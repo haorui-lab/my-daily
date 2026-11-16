@@ -1,0 +1,146 @@
+{
+  "date": "2026-11-16",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-13 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "Anthropic：怎么把安全评测做扎实",
+          "tags": [
+            "Anthropic",
+            "safety evals",
+            "evaluations"
+          ],
+          "meta": "2026-11-13 · Research",
+          "subgroup": "Anthropic",
+          "gist": "安全评测测的是模型会不会造成或加重伤害，而不是会不会把任务做完。他们根据系统卡里的经验，给出一套设计和报告建议。\n\n- 样本下限：复杂多轮 100 条，简单单轮 1,000 条；现有单轮无害作答率已到 94%–98%，基本饱和，更适合做回归检查\n- 测 Claude Fable 5.1 时，API（裸模型）和 claude.ai（带系统提示）在多轮安全评测上的合适作答率最多相差 34 个百分点\n- 评测常要关掉常规护栏，应在无外网的沙箱里跑，并做实时监控\n- 若只做三件事：先写清你到底要测什么，用人类判断校准评分器，并报告不确定性",
+          "note": "11-13 见文。当日晨报扫主站索引时尚未出现，今日补收。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://www.anthropic.com/research/building-strong-safety-evaluations"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "DeepSeek：App 里的搜索、文件和语音，现在可经 API 调用",
+          "tags": [
+            "DeepSeek",
+            "API"
+          ],
+          "meta": "2026-11-13 · API",
+          "subgroup": "DeepSeek",
+          "gist": "DeepSeek 把 App 侧能力接到 API。V4.1-Flash（`deepseek-flash`）在 Messages、Responses 和 Chat Completions 上都可以用，工具调用和上下文组装由服务端完成。\n\n- 内置：网页搜索（非思考模式带引用）、深度思考搜索、文件解析、自动读链接，以及安全检查\n- 搜索、抓取、OCR、ASR、TTS 也提供独立 API\n- 面向公众的应用必须打开安全检查；另有开源前端演示 deepseek-ai/chat-demo",
+          "note": "官方文档日期 11-13。当日晨报查看 api-docs 时最新仍是 10-17，今日补收。",
+          "links": [
+            {
+              "label": "官方说明",
+              "url": "https://api-docs.deepseek.com/news/news261113/"
+            },
+            {
+              "label": "演示代码",
+              "url": "https://github.com/deepseek-ai/chat-demo"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Inkling 2 Small",
+          "tags": [
+            "新词"
+          ],
+          "meta": "thinkingmachines/Inkling-2-Small · 官方介绍 2026-11-05，权重 2026-11-12",
+          "gist": "Thinking Machines 的第二代模型。稀疏 MoE，文本 + 图像输入，可变推理力度。权重已在 Hugging Face 开放下载。\n\n- 总参约 594B，每 token 约 17B 激活；context 最长 1M\n- Artificial Analysis Intelligence Index 得分 31；本地推理可走 SGLang、vLLM、TokenSpeed、Unsloth\n- 官方 11-12 更新：已接入 NVIDIA、Fireworks、Together、Cloudflare 等 API",
+          "note": "HF Trending 新名，不是已有底座的量化 / demo。官方 11-05 介绍、11-12 放权重，11-13 晨报未收，今日仍在 Trending。",
+          "links": [
+            {
+              "label": "官方介绍",
+              "url": "https://thinkingmachines.ai/news/inkling-2-small/"
+            },
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+            }
+          ]
+        },
+        {
+          "title": "Haru-4B",
+          "tags": [
+            "新词"
+          ],
+          "meta": "higurashi-ai/Haru-4B · 2026-11-13",
+          "gist": "Higurashi AI 放出的全双工口语对话基座，边听边说，面向研究，Apache 2.0。\n\n- 每 133 ms（7.5 Hz）吃进一帧用户音频，同时产出一帧自己的音频和文本\n- 骨干是 Qwen3.5-4B；音频用连续 latent，一步 MeanFlow 采样，没有独立的音频 Transformer，也没有离散音频 token\n- 用文本人设卡控角色，用短参考音频控音色；支持中、英、日、韩、俄、西、葡、德、法 9 种语言\n- 代码在 higurashi-ai/Haru，官方说一块约 12 GB 显存的 NVIDIA GPU 就能跑",
+          "note": "HF Trending 新名。官方 11-13 发布，当日晨报未收，今日仍在 Trending。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/higurashi-ai/Haru-4B"
+            },
+            {
+              "label": "官方介绍",
+              "url": "https://www.higurashi.ai/haru4b/"
+            }
+          ]
+        },
+        {
+          "title": "Edge0-145B",
+          "tags": [
+            "新词"
+          ],
+          "meta": "Edge0/Edge0-145B-NVFP4 · 官方介绍 2026-11-12",
+          "gist": "Edge0 放出的端侧稀疏 MoE，目标是一块消费级 GPU 跑 145B 级模型。官方称这不是对 Qwen3.8-Flash-Next 的重新量化，而是改了专家层并做了后训练，权重按 4 bit 原生训练。\n\n- 48 层、512 专家、每 token 激活 10 个；context 256K\n- 在 RTX 5090 D 24 GB 上，NVFP4 版本 16K prefill 约 3165.7 tok/s，agent decode 约 98.3 tok/s；驻留时约 23.25 GiB 显存加 38.27 GiB 内存\n- 官方给出 Terminal-Bench 2.1 为 86.5；同系列还有 120B",
+          "note": "HF Trending 新名。官方 11-12 发布，11-13 晨报未收，今日仍在 Trending。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/Edge0/Edge0-145B-NVFP4"
+            },
+            {
+              "label": "官方介绍",
+              "url": "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按入库时间（Asia/Shanghai）归入本日；frontmatter saved_at 为 2026-11-15。只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "Feicai：把 Grok Bot + Codex 多 Agent 团队的架构图直接发出来（附三种标准团队）",
+          "tags": [
+            "Grok Bot",
+            "Codex",
+            "多智能体"
+          ],
+          "meta": "剪藏 · 入库 2026-11-15 · @zhu185178",
+          "gist": "Feicai 在 11-14 把四天前长教程里的架构图直接发出来，并给出自己在用的三种标准团队。搭法是：Grok Bot 负责编排，Mac 上的 Codex 负责执行，GitHub 记录任务进度；人只和 Chief of Staff 对话，高风险操作才需要亲自确认。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/zhu185178/status/2121493364705292662"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

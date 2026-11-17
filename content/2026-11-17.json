@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-17",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-16 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": []
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": []
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "tiny-voca",
+          "tags": [
+            "新词"
+          ],
+          "meta": "n4ze3m/tiny-voca · 2026-11-14",
+          "gist": "n4ze3m 放出的超小英文 TTS，从零训练，面向手机和浏览器。\n\n- 总参约 4.5M，两个美式英语音色（F2 / M2），输出 24 kHz 单声道\n- 训练数据大约 18 小时合成语音；四线程 CPU 上大约是实时的 70 倍\n- Apache 2.0；Hugging Face 提供 PyTorch、ONNX 和 GGUF 权重",
+          "note": "HF Trending 新名，仓库 11-14 创建。GitHub 现约 614★，日均约 250。11-16 晨报时尚未进入 Trending，今日补收。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/n4ze3m/tiny-voca"
+            },
+            {
+              "label": "GitHub",
+              "url": "https://github.com/n4ze3m/tiny-voca"
+            },
+            {
+              "label": "项目页",
+              "url": "https://tiny-voca.n4ze3m.com"
+            }
+          ]
+        },
+        {
+          "title": "Yogurt",
+          "tags": [
+            "新词"
+          ],
+          "meta": "FrigadeHQ/yogurt · 2026-11-10",
+          "gist": "Frigade 做的本地 AI 会议笔记，定位是 Granola 的免费开源替代。录音时不往会里加 bot。\n\n- 音频、转写和总结都在本机完成：转写用 whisper.cpp（Mac 上也可走 Apple SpeechAnalyzer），总结走 llama.cpp 本地开源权重\n- 支持 Mac / Windows / Linux，MIT 协议，不用注册账号；模型只需下载一次\n- 打开后可作为本地 MCP 服务器，让本机其他应用读取笔记和转写",
+          "note": "GitHub 11-10 创建。11-16 晨报因未能核实星标暂不收；今日 API 显示约 1877★，日均约 300，达到门槛。",
+          "links": [
+            {
+              "label": "GitHub",
+              "url": "https://github.com/FrigadeHQ/yogurt"
+            },
+            {
+              "label": "官网",
+              "url": "https://yogurt.so"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按入库时间（Asia/Shanghai）归入本日；frontmatter saved_at 为 2026-11-15，11-16 晨报时尚未入仓。只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "poteto：AIE 演讲《All Code Is Slop (Except Mine)》，讲 Grok Bot 如何又快又稳地出代码",
+          "tags": [
+            "Grok Bot",
+            "AIE",
+            "软件工厂"
+          ],
+          "meta": "剪藏 · 入库 2026-11-17 · @poteto",
+          "gist": "@poteto（Lauren Tan，SpaceXSI 的 Grok Bot 负责人）在 AI Engineer CODE 2026 上讲：先把约束写进代码和可执行检查，再谈软件工厂。她自己一个月合并了约 3,000 个 PR，团队约 11,000 个，相对回滚率大约 0.5%，客户端性能还比发布时更好。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/poteto/status/2121673563489140863"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

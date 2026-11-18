@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-18",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-17 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research（Anthropic / OpenAI）",
+      "items": [
+        {
+          "title": "OpenAI：GPT-6.2 Astra / Sol 系统卡",
+          "tags": [
+            "OpenAI",
+            "system card",
+            "Preparedness Framework"
+          ],
+          "meta": "2026-11-17 · System Card",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 随 GPT-6.2 Astra 和 Sol 发布系统卡，按 Preparedness Framework 写清能力门槛和配套措施。\n\n- 两款都达到网络安全 Critical、生物/化学 High；Astra 是他们对外发布的第一款达到 AI 自我改进 High 的模型\n- 两款在已知漏洞上写出可工作利用的能力都强于前代，因此收紧了高风险网络安全协助的默认限制\n- 对外扩大 Astra 在 Codex 里的使用前，他们加强了研究环境隔离，并上线 Control Room，用来跟踪和紧急停止研究负载\n- 多数对齐评测与 GPT-6 Astra 接近，但更容易在汇报时漏掉已知障碍；越狱抵抗弱于 GPT-6 Astra",
+          "note": "11-17 随型号发布。昨日晨报之后见文，今日补收。",
+          "links": [
+            {
+              "label": "系统卡",
+              "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/safety-overview"
+            },
+            {
+              "label": "PDF",
+              "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "OpenAI 推出 GPT-6.2 Astra 和 Sol",
+          "tags": [
+            "OpenAI",
+            "GPT-6.2",
+            "Astra",
+            "Sol"
+          ],
+          "meta": "2026-11-17 · 新模型",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 发布旗舰 GPT-6.2 Astra，以及面向日常工作的 GPT-6.2 Sol。即日起在 ChatGPT Work 和 Codex 向 Plus、Pro、Enterprise、Edu 开放，API 模型名是 `gpt-6.2-astra` 和 `gpt-6.2-sol`，两款上线即可用 Ultrafast。\n\n- Astra API 定价：输入 $8、缓存输入 $0.40、输出 $40（每百万 token）；输入和输出比 GPT-6 Astra 低 20%，缓存输入折扣 60%。Sol 沿用 GPT-6.1 Sol 的 $2 / $0.10 / $10\n- Agents' Last Exam：Astra 比 GPT-6 Astra 高 5.2 分，成本不到三分之一；比 Claude Fable 5.2 高 5.5 分，成本约 5%\n- Terminal-Bench-Science 0.1 和 Vals Science Index 刷新最高分；Harvey LAB-AA v1.1 上也创新高，通过率超过 Claude Fable 5.2 一倍以上，成本约六分之一\n- Cognition FrontierCode 2.0 上，Sol 在 max 设置下与 Astra 只差 0.5 分，成本约五分之一",
+          "note": "官方 11-17 发布，时点在昨日晨报之后，今日补收。同日还有 ChatGPT for Sales，属销售工作流产品，不单列。",
+          "links": [
+            {
+              "label": "官方介绍",
+              "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+            },
+            {
+              "label": "系统卡",
+              "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/safety-overview"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "SenseNova-Loop-9B",
+          "tags": [
+            "新词"
+          ],
+          "meta": "sensenova/SenseNova-Loop-9B · 正式版 2026-11-17",
+          "gist": "商汤正式放出 SenseNova-Loop-9B。循环复用中间层，用较小参数换更深计算，面向推理、代码、工具和多模态任务。\n\n- 约 9B 参数；32 个物理层里中间 24 层跑两遍，一次前向相当于 56 层计算（官方称推理等效约 14.6B）\n- 两路 mHC 残差，线性注意力与全注意力交替；支持文本和图像输入，上下文最长 512K\n- 官方称在 NL2Repo、AIDABench 上接近 Qwen3.8-27B；同期提供官方 AWQ 4-bit 权重，256K 上下文大约 15 GiB 显存（4-bit 权重 + 8-bit KV）",
+          "note": "HF Trending 新名。官方 11-17 从 Preview 转为正式版，昨日晨报之后见文。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B"
+            },
+            {
+              "label": "GitHub",
+              "url": "https://github.com/OpenSenseNova/SenseNova-Loop"
+            }
+          ]
+        },
+        {
+          "title": "Sage-S2.1-Flash",
+          "tags": [
+            "新词"
+          ],
+          "meta": "internlm/Sage-S2.1-Flash · 2026-11-15",
+          "gist": "上海人工智能实验室的科学多模态模型，把分子、晶体、蛋白质等科学数据跟自然语言放在同一套表示里，做多轮分析和核对。\n\n- Hugging Face 标注约 321B 参数；可通过 Sage SciPerception 的投影器接入十多种科学输入\n- 官方对照表上，MLE-bench Lite 得 90.3，超过 DeepSeek-V4.1-Flash-1017；OfficeQA Pro、Harvey LAB、SpreadsheetBench 2 也排在对照模型前面\n- 权重和代码是 MIT 协议，另有 FP8 版本",
+          "note": "HF Trending 新名。权重 11-15 上传，11-16 与 11-17 晨报未收，今日进入 Trending。与此前观察的 Sage-A1.5 不是同一专名。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/internlm/Sage-S2.1-Flash"
+            }
+          ]
+        },
+        {
+          "title": "PeakCut",
+          "tags": [
+            "新词"
+          ],
+          "meta": "haziqahmedqasmi/PeakCut · 2026-11-14",
+          "gist": "自托管的长视频和直播切片工具，把内容裁成可发的竖屏字幕短视频，用你自己的模型 key。\n\n- 支持 YouTube、Twitch、Kick 链接或本地上传；也能边录直播边按音量、聊天和转写切片\n- 可选 Gemini、OpenAI、Grok、Claude、Ollama 等；不配 key 时就按音量选片段\n- 可接到 YouTube、Instagram、TikTok 排队或自动发布",
+          "note": "GitHub 11-14 创建。11-17 晨报时约 661★，再观察；今日约 866★，日均约 232，达到门槛。",
+          "links": [
+            {
+              "label": "GitHub",
+              "url": "https://github.com/haziqahmedqasmi/PeakCut"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按入库时间（Asia/Shanghai）归入本日；frontmatter saved_at 为 2026-11-17，commit 于 2026-11-17T19:07:05Z（11-18 03:07 上海时间）入仓。只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "Designed to Scale：40 课互动图解，从一次请求学到完整系统设计",
+          "tags": [
+            "系统设计",
+            "Designed to Scale",
+            "交互教学"
+          ],
+          "meta": "剪藏 · 入库 2026-11-18 · @DilumSanjaya",
+          "gist": "Dilum Sanjaya 做了免费网页课 Designed to Scale：40 课、分 9 个单元，每课都是可逐步点开的动画示意图，从一次页面请求讲到短链、信息流、聊天系统的完整设计。站点自带简体中文。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/DilumSanjaya/status/2122373063560110320"
+            },
+            {
+              "label": "课程站点",
+              "url": "https://designed-to-scale.vercel.app"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

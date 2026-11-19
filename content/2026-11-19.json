@@ -1,0 +1,263 @@
+{
+  "date": "2026-11-19",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-18 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research",
+      "items": [
+        {
+          "title": "Claude Fable 5.2 解了两个黑洞物理里的未决问题",
+          "tags": [
+            "Anthropic",
+            "Claude Fable 5.2",
+            "量子引力"
+          ],
+          "meta": "2026-11-17 · 研究",
+          "subgroup": "Anthropic",
+          "gist": "Anthropic 写了 Claude Fable 5.2 解掉的两个量子引力问题，都和黑洞有关，并放出预印本。\n\n- 第一个：补完了 2003 年就列好、一直没算完的计算，说明霍金–Page 相变在时空不再有确定形状时仍然是突变\n- 第二个：给最简版 modular bootstrap 找到精确上界——最轻黑洞质量不超过 c/Λ，Λ ≈ 9.1266，并证明这已是该方法能给出的最低天花板；它还到不了黑洞开始出现的 c/12，还需要别的条件\n- 做法是让多份 Claude 组成小组，分头推算并对照已知结果",
+          "note": "官方 11-17 见文，昨日晨报未收，今日补收。",
+          "links": [
+            {
+              "label": "官方文章",
+              "url": "https://www.anthropic.com/research/claude-black-hole-physics"
+            },
+            {
+              "label": "预印本一",
+              "url": "https://hexagonmath.org/2611.00175v1"
+            },
+            {
+              "label": "预印本二",
+              "url": "https://hexagonmath.org/2611.00174v1"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI 更新研究加速测量：锯齿状前沿",
+          "tags": [
+            "OpenAI",
+            "研究加速",
+            "RSI"
+          ],
+          "meta": "2026-11-18 · 研究",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 更新了对内部研究加速的测量，用来观察递归自我改进的迹象。结论是：编程 Agent 在加速研究，但按任务类型差得很大，人仍在回路里。\n\n- 3 月到 10 月，估计需 2–4 小时人工的研究任务，Agent 独立完成率从 23% 升到 46%；4–8 小时任务从 13% 升到 35%。按任务拆开：盯训练 79%，开训练 35%，写推理和 Serving 代码 25%\n- 按 API 标价，10 月人均每日 Agent 用量中位数 $2,400，90 分位 $23,000；人均 Agent 工作日从 0.5 增到 5.7（每 8 小时算一个工作日）\n- 调查里，为保留三个月前沿编程 Agent，中位数愿意拿出团队算力的 30%，或编制的 40%\n- 到 10 月 18 日那四周，人均记录实验次数是 2025 年基线的 1.68 倍；OpenAI 自建的 OECI 前沿自 2025 年 8 月起每年升 16.4 分",
+          "note": "官方 11-18 发布的研究测量更新，接在 9 月那篇研究加速报告之后。",
+          "links": [
+            {
+              "label": "官方文章",
+              "url": "https://openai.com/index/research-acceleration-jagged-frontier"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI：用模型推进芯片设计",
+          "tags": [
+            "OpenAI",
+            "芯片设计",
+            "Jalapeño"
+          ],
+          "meta": "2026-11-18 · 研究",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 写了模型怎么改进自研推理芯片 Jalapeño，以及怎么给 AMD 和开源 RISC-V 核做设计优化。\n\n- Jalapeño 向量单元标准单元面积约降 13%，矩阵单元约降 10%，已在硅片验证；其中一个乘法器改设计面积约降 15%，延迟从两拍改到一拍\n- 与 AMD 合作，在已高度优化的旗舰 GPU IP 上看到最高约 14% 的 PPA 提升，不到 5 个月走完大约一年的进度；部分改动已进最近一次流片\n- 在 PicoRV32 和 OpenTitan Ibex 两个开源核上测吞吐：同等约 11.2 万 token 预算下，GPT-6.2 Astra 平均分最高；在 PicoRV32 上大约是 GPT-6 Astra 的两倍\n- 正在和 Synopsys 对接，把模型接到工程师常用的 EDA 工具里",
+          "note": "官方 11-18 发布的技术报告，列在 Research 索引下。",
+          "links": [
+            {
+              "label": "官方文章",
+              "url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+            }
+          ]
+        }
+      ]
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": []
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Hy4 flash",
+          "tags": [
+            "新词"
+          ],
+          "meta": "tencent/Hy4-flash · 2026-11-17",
+          "gist": "腾讯放出 Hy4 flash（仓库名 Hy4-flash），这是目前最讲究成本的 Hy 系列开源权重模型。原生接受文本和图像输入，上下文最长 1M。\n\n- 总参约 220B（含约 64B Engram），每 token 激活约 12B；另有 0.85B 的投机解码草稿模型 DFly2\n- 内部 WorkIndex 得 42.1，略高于 Hy4 preview 的 39.7；单任务平均成本约是 Hy4 preview 的 1/13、Hy4 的 1/20、DeepSeek-V4.1-Flash-1017 的 1/8\n- 盲测用户满意度 2.79/4，接近 Claude Haiku 5.5 的 2.81/4，中位完成时间 6.7 分钟，单任务成本约 0.26 元\n- 同期提供 FP8 和 base 权重",
+          "note": "HF Trending 新名。权重 11-17 上传，昨日晨报时尚未进入 Trending，今日补收。腾讯不在本栏厂商名单，故记在新词雷达。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/tencent/Hy4-flash"
+            },
+            {
+              "label": "官方介绍",
+              "url": "https://hy.tencent.ai/research/hy4-flash"
+            },
+            {
+              "label": "GitHub",
+              "url": "https://github.com/Tencent-Hunyuan/Hy4-flash"
+            }
+          ]
+        },
+        {
+          "title": "FastFrames",
+          "tags": [
+            "新词"
+          ],
+          "meta": "apple/FastFrames-L · 2026-11-16",
+          "gist": "苹果 AIML 放出 FastFrames：把视频生成做到可交互延迟。同时开源 FastFrames-S（1.3B）和 FastFrames-L（14B），都是两步自回归视频扩散模型，生成 480p 视频。\n\n- FastFrames-S 在单卡、满 KV cache 时，一次生成步骤约 35.4 ms（论文写 36 ms）\n- FastFrames-L 从 Wan2.1-14B 蒸馏而来；默认输出 832×480、81 帧、16 fps\n- 另有一份加速后的 LingBot 1.3B，官方称比原模型快约 16 倍，并支持相机条件控制\n- 论文：arXiv:2611.23226",
+          "note": "HF Trending 新名。FastFrames-L 权重 11-16 上传，S 与 L 归同一专名。今日进入 Trending。",
+          "links": [
+            {
+              "label": "Hugging Face（L）",
+              "url": "https://huggingface.co/apple/FastFrames-L"
+            },
+            {
+              "label": "Hugging Face（S）",
+              "url": "https://huggingface.co/apple/FastFrames-S"
+            },
+            {
+              "label": "项目页",
+              "url": "https://apple-aiml-research.github.io/ml-fastframes/"
+            },
+            {
+              "label": "GitHub",
+              "url": "https://github.com/apple-aiml-research/ml-fastframes"
+            },
+            {
+              "label": "论文",
+              "url": "https://arxiv.org/abs/2611.23226"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按入库时间（Asia/Shanghai）归入本日；6 份均在 commit 6ef4d5de @ 2026-11-18T19:05:35Z（11-19 03:05 上海时间）入仓。frontmatter saved_at 为 2026-11-17 或 2026-11-18，昨日晨报时仓库里还没有这些文件。只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "hq：给并行 Agent 项目加看板和收工闸门，减少过早停工",
+          "tags": [
+            "hq",
+            "Agent",
+            "CLI",
+            "工作流"
+          ],
+          "meta": "剪藏 · 入库 2026-11-19 · @hi_unc1e",
+          "gist": "unc1e 推荐开源 CLI hq：用看板和收工闸门管理并行的 Agent 项目，减少 Agent 太早停下来的情况。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/hi_unc1e/status/2122704909858730446"
+            },
+            {
+              "label": "GitHub",
+              "url": "https://github.com/hi-unc1e/hq"
+            }
+          ]
+        },
+        {
+          "title": "DramaPie Box：用自己的 Colab 额度在本地做 AI 视频",
+          "tags": [
+            "DramaPie",
+            "Colab",
+            "AI视频"
+          ],
+          "meta": "剪藏 · 入库 2026-11-19 · @easychen",
+          "gist": "EasyChen 推荐免费本地应用 DramaPie Box：用你自己的 Google Colab 算力当私人 AI 视频工作室。他说 Pro 也能用，只是最近 Ultra 用户多，不容易抢到较好的 G4 机器。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/easychen/status/2123012831272689798"
+            },
+            {
+              "label": "下载页",
+              "url": "https://box.dramapie.com/"
+            }
+          ]
+        },
+        {
+          "title": "Google Colab 上线 API 和 MCP，Agent 可远程用 Colab 算力",
+          "tags": [
+            "Google Colab",
+            "MCP",
+            "API",
+            "Agent"
+          ],
+          "meta": "剪藏 · 入库 2026-11-19 · @gota_bara",
+          "gist": "Google Colab 发布了官方 API 和托管 MCP 端点，Agent 可以按程序申请运行时、无头执行 Python。Gota 实测后认为，连云端 Agent 也能用上 Colab 的 GPU，电脑关掉也能把训练和推理交出去。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/gota_bara/status/2122810402652500311"
+            },
+            {
+              "label": "介绍文章",
+              "url": "https://medium.com/google-colab/the-google-colab-api-and-mcp-endpoint-for-developers-and-agents-65cfef497056"
+            }
+          ]
+        },
+        {
+          "title": "Topinspo：近百个界面设计 Skill，给 Claude 做界面时用",
+          "tags": [
+            "设计",
+            "Skill",
+            "Topinspo"
+          ],
+          "meta": "剪藏 · 入库 2026-11-19 · @ianneo_ai",
+          "gist": "Ian 推荐把 Topinspo 的设计 Skill 目录收藏起来：页面按口味、审查、字体、色彩、布局、动效、特效、无障碍等分类，汇集近百个可安装的界面设计 Skill，方便用 Claude 做界面时调用。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/ianneo_ai/status/2122988839639958002"
+            },
+            {
+              "label": "技能目录",
+              "url": "https://www.topinspo.design/skills"
+            }
+          ]
+        },
+        {
+          "title": "建议写进 agent.md：先问有没有更简单的做法",
+          "tags": [
+            "agent.md",
+            "提示词",
+            "工作流"
+          ],
+          "meta": "剪藏 · 入库 2026-11-19 · @jalalash",
+          "gist": "Jalal Ashrafi 引用 dex 的愿望，建议在 agent.md 里加一条规则：动手做非琐碎任务之前，如果存在更简单或更稳妥的做法，先说一次「你确定要 X 吗？Y 更简单，因为 Z」，然后按你的选择执行。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/jalalash/status/2122815635789074707"
+            }
+          ]
+        },
+        {
+          "title": "Codex 团队建议先加 ELI5 指令，模型说话含糊的问题他们在修",
+          "tags": [
+            "Codex",
+            "OpenAI",
+            "ELI5"
+          ],
+          "meta": "剪藏 · 入库 2026-11-19 · @thsottiaux",
+          "gist": "OpenAI 做 Codex 和 ChatGPT 的 Tibo 在 Theo 的帖下建议：先在 Codex 的自定义指令里加上「默认用小学水平讲清楚，需要时再深入」；同时说团队已经在处理模型说话含糊、不好读的问题。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/thsottiaux/status/2122949739708809619"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

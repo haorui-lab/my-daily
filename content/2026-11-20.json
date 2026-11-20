@@ -1,0 +1,263 @@
+{
+  "date": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "subtitle": "相对 11-19 上次检查的新增",
+  "footer": "Daily News",
+  "sections": {
+    "research": {
+      "title": "Research",
+      "items": []
+    },
+    "vendors": {
+      "title": "厂商动态",
+      "items": [
+        {
+          "title": "OpenAI 向 API 开放 GPT-Live-1.1 语音模型",
+          "tags": [
+            "OpenAI",
+            "GPT-Live-1.1",
+            "语音"
+          ],
+          "meta": "2026-11-19 · 新模型",
+          "subgroup": "OpenAI",
+          "gist": "OpenAI 在 11 月 19 日的 API changelog 里加入 GPT-Live-1.1。开发者可在已有 Live 会话配置中改用 `gpt-live-1.1`，走 `v1/live/sessions`。\n\n- 全双工语音模型，能边说边听；相对 GPT-Live-1，changelog 写明多语对话的发音、口音一致性和转写有改进，系统卡还写到指令遵循和音色保真\n- 需要更强推理时，可用自然语言说明何时把任务交给后端模型\n- WebRTC 会话支持 standby：没人说话就暂停推理，有人开口再恢复\n- 按时长计费：活跃 $0.05/分钟，standby $0.02/分钟",
+          "note": "11-19 晨报厂商栏为空。官方 API changelog 与系统卡 changelog 均标为 November 19, 2026。ChatGPT / Codex / Dots 侧的 GPT-Live-1.1 已于 10 月 15 日发布，这次新的是 API 上线。新闻室没有单独发稿。",
+          "links": [
+            {
+              "label": "API Changelog",
+              "url": "https://developers.openai.com/api/docs/changelog"
+            },
+            {
+              "label": "模型页",
+              "url": "https://developers.openai.com/api/docs/models/gpt-live-1.1"
+            },
+            {
+              "label": "系统卡",
+              "url": "https://deploymentsafety.openai.com/gpt-live-1-1"
+            },
+            {
+              "label": "Live 会话说明",
+              "url": "https://developers.openai.com/api/docs/guides/live-conversations"
+            }
+          ]
+        }
+      ]
+    },
+    "radar": {
+      "title": "新词雷达",
+      "items": [
+        {
+          "title": "Voice Isolator",
+          "tags": [
+            "新词"
+          ],
+          "meta": "inworld/voice-isolator · 2026-11-14",
+          "gist": "Inworld 放出 Voice Isolator：开源 48 kHz 人声分离，用来从嘈杂录音或直播里抽出说话声。\n\n- 两个同架构权重：离线版 `voice-isolator-v1`，64M，按 8 秒整段看；实时版 `voice-isolator-v1-realtime`，58M，前瞻 20 ms\n- Apache-2.0；HF 仓库 11-14 上传，今日出现在 Trending 第 6，likes 264\n- 代码在 GitHub `inworld-ai/voice-isolator`，11-17 02:42 创建，现 105★，未单靠星标门槛",
+          "note": "HF Trending 新名。权重 11-14 上传，昨日晨报时未进入当时可见的 Trending 前列，今日补收。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/inworld/voice-isolator"
+            },
+            {
+              "label": "GitHub",
+              "url": "https://github.com/inworld-ai/voice-isolator"
+            }
+          ]
+        },
+        {
+          "title": "DaisyRose-27B",
+          "tags": [
+            "新词"
+          ],
+          "meta": "RadixArk/DaisyRose-27B · 2026-11-18",
+          "gist": "RadixArk 放出自己的第一款模型 DaisyRose-27B：在 Qwen3.8-27B 上用强化学习做后训练，用来加强长程 agent 和编程任务。\n\n- 用 1,200 条精选长程任务训练，训练会话最长 1M token，144 张 H200 跑了 18 天\n- Terminal-Bench 4.1 pass@1 从底座的 5.6% 升到 12.0%；架构、分词器和聊天模板保持不变，仍支持图像理解和 256K 上下文\n- 11-18 发布，提供 BF16 / FP8 / NVFP4；HF likes 185，今日出现在 Trending 约第 32",
+          "note": "HF Trending 新名。官方博客与权重均为 11-18，昨日晨报未收，今日进入 Trending。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/RadixArk/DaisyRose-27B"
+            },
+            {
+              "label": "官方博客",
+              "url": "https://www.radixark.com/blog/daisyrose-27b"
+            }
+          ]
+        },
+        {
+          "title": "Aion 1.0 Instruct",
+          "tags": [
+            "新词"
+          ],
+          "meta": "microsoft/Aion-1.0-Instruct-2.3B · 2026-11-19",
+          "gist": "微软放出 Aion 1.0 Instruct 开源权重：面向 Windows 端侧的 2.3B 指令模型，用来做摘要、改写、聊天和文档理解。\n\n- 约 2.29B 参数，上下文 32,768 token，MIT 许可，支持英、德、西、葡、意、法、中、日\n- 模型卡用 lm-evaluation-harness：IFEval 83.90，GSM8K 74.91\n- Edge 博客 11-19 宣布：开源权重正式放出，并作为 Edge 内置小模型替换 Phi-4-mini；同时开放 Prompt API 源试用\n- 官方写，再优化一版并配上内容审核模型，计划在 2027 年 1 月底成为 Windows 系统 SLM\n- HF 仓库 11-19 01:05 上传，likes 67，今日出现在 Trending 约第 47",
+          "note": "HF Trending 新名。微软不在本栏厂商名单，故记在新词雷达。Foundry 博客 11-13 已预告专名；新的是 11-19 开源权重和 Edge 接入。昨日晨报时权重已上传，但尚未进入 Trending，今日补收。",
+          "links": [
+            {
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B"
+            },
+            {
+              "label": "Edge 博客",
+              "url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/"
+            }
+          ]
+        },
+        {
+          "title": "NeonClipping",
+          "tags": [
+            "新词"
+          ],
+          "meta": "iamajmeena/neonclipping · 2026-11-19",
+          "gist": "NeonClipping 是一个本地短视频切片工具：贴进链接，大约两分钟给出带字幕的 9:16 切片。\n\n- 默认 Fast 模式先只下音频，用平台字幕或本地 Whisper 找高潮，再用本地 LLM（Ollama）写标题和 hook，最后只下载选中片段\n- GitHub 仓 11-19 18:00 创建，现 364★，约 15 小时，日均约 580，过了约 200 的日均门槛\n- 作者 Ajay K Meena；支持 YouTube、Twitch、Kick 或本地 MP4",
+          "note": "GitHub 11-19 创建，11-19 晨报时该仓还不存在。现 364★，仓龄约 15 小时，日均约 580，达到门槛。与已报的 PeakCut 不是同一专名。",
+          "links": [
+            {
+              "label": "GitHub",
+              "url": "https://github.com/iamajmeena/neonclipping"
+            },
+            {
+              "label": "项目页",
+              "url": "https://iamajmeena.github.io/neonclipping/"
+            }
+          ]
+        }
+      ]
+    },
+    "clips": {
+      "title": "剪藏",
+      "note": "按入库时间（Asia/Shanghai）归入本日；frontmatter saved_at 为 2026-11-19，commit 于 2026-11-19T18:58:23Z（11-20 02:58 上海时间）入仓。只读自 haorui-lab/my-private-clips。",
+      "source": {
+        "repo": "haorui-lab/my-private-clips",
+        "path_pattern": "clips/YYYY/MM/YYYY-MM-DD-<slug>.md",
+        "index": "index/by-url.json"
+      },
+      "items": [
+        {
+          "title": "Firecrawl Local：本机一条命令做抓取，号称比自托管快 37 倍",
+          "tags": [
+            "Firecrawl",
+            "开源",
+            "Rust",
+            "MCP",
+            "本地抓取"
+          ],
+          "meta": "剪藏 · 入库 2026-11-20 · @firecrawl",
+          "gist": "Firecrawl 出了本机 Rust 二进制，一条命令就能 scrape/crawl，还能当 MCP 或本地 v2 API；官方称比原来的自托管快 37 倍、空闲大约 11 MB，搜索等能力默认仍可能走 Cloud。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/firecrawl/status/2123096169630912637"
+            },
+            {
+              "label": "仓库",
+              "url": "https://github.com/firecrawl/firecrawl"
+            },
+            {
+              "label": "本机说明",
+              "url": "https://github.com/firecrawl/firecrawl/blob/main/apps/local/README.md"
+            }
+          ]
+        },
+        {
+          "title": "衣姿 PoseWear：姿势、服装、人像参考图库，可在线 AI 试穿",
+          "tags": [
+            "PoseWear",
+            "参考图",
+            "AI绘画",
+            "试穿"
+          ],
+          "meta": "剪藏 · 入库 2026-11-20 · @ikai_freedom",
+          "gist": "i凯分享参考图站 PoseWear，姿势、服装、人像都带提示词，还能上传照片试穿；免费不用注册，18+ 默认关。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/ikai_freedom/status/2123433989348463084"
+            },
+            {
+              "label": "站点",
+              "url": "https://posewear.pages.dev"
+            }
+          ]
+        },
+        {
+          "title": "小互：和 Poke 谈创意可领取 Devin 用量，他拿到 149 美元额度加订阅",
+          "tags": [
+            "Devin",
+            "Poke",
+            "Cognition",
+            "额度"
+          ],
+          "meta": "剪藏 · 入库 2026-11-20 · @xiaohu",
+          "gist": "Cognition 通过 Poke 用聊天谈创意发 Devin 额度，号称最高 1 万美元用量加订阅；小互自己拿到 149 美元用量，外加 200 美元 Max 订阅。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/xiaohu/status/2123437195675730208"
+            },
+            {
+              "label": "活动页",
+              "url": "https://poke.com/bots"
+            }
+          ]
+        },
+        {
+          "title": "lauren：怎么用 Grok Bot 把一件事自动化",
+          "tags": [
+            "Grok Bot",
+            "自动化",
+            "例程",
+            "Dr Eggbot"
+          ],
+          "meta": "剪藏 · 入库 2026-11-20 · @poteto",
+          "gist": "lauren 写了一篇给普通人的 Grok Bot 自动化指南：先分清目标和过程，用大白话对齐做法和判断标准，再用例程自动开跑；也推荐用 Dr Eggbot 帮忙设计机器人。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/poteto/status/2123159537016533493"
+            },
+            {
+              "label": "长文",
+              "url": "https://x.com/i/article/2122921713864171520"
+            },
+            {
+              "label": "Dr Eggbot",
+              "url": "https://x.ai/bot/rJW52lmFLtCvy2tSHcIag"
+            }
+          ]
+        },
+        {
+          "title": "Switch Buddy：用对话快速搭好多 Agent 共享房间",
+          "tags": [
+            "Switch AI",
+            "Switch Buddy",
+            "多Agent",
+            "开源",
+            "Claude Code",
+            "Codex"
+          ],
+          "meta": "剪藏 · 入库 2026-11-20 · @switch_ai_",
+          "gist": "Switch AI 出了 Switch Buddy，装好 Console 后用对话就能建 Agent、建房间并接到现有聊天工具，让 Claude Code、Codex 等和人共用同一份上下文。",
+          "links": [
+            {
+              "label": "原文",
+              "url": "https://x.com/switch_ai_/status/2123083871830913124"
+            },
+            {
+              "label": "产品页",
+              "url": "https://www.switchagents.ai/rooms"
+            },
+            {
+              "label": "官方博客",
+              "url": "https://www.switchagents.ai/blog-posts/whats-new-in-switch-rooms-november-2026"
+            },
+            {
+              "label": "仓库",
+              "url": "https://github.com/sandbox-quantum/switch"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
